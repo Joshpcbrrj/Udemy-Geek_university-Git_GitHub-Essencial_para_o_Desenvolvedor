@@ -17,19 +17,19 @@
 [O que é Git ?]()<br>
 [Git não é Github]()<br>
 [Instalando o Git]()<br>
-[Registrando usuários locais no Git]()<br>
+[Registrando usuários locais no Git]()
 
 <br>
 
 ### Git básico:
 [Entendendo como o Git funciona]()<br>
 [Ciclo de vida de arquivos no Git]()<br>
-[Fazendo uso do `.gitignore`]()<br>
-[Como fazer os `commits`]()<br>
+[Fazendo uso do .gitignore]()<br>
+[Como fazer os commits]()<br>
 [Como consultar o histórico do projeto]()<br>
 [Voltando no tempo com o Git]()<br>
 [Conhecendo alguns comandos úteis]()<br>
-[Desfazendo e realizando ações no Git]()<br>
+[Desfazendo e realizando ações no Git]()
 
 <br>
 
@@ -40,7 +40,7 @@
 [Clone e push]()<br>
 [Fetch e pull]()<br>
 [Bare repository]()<br>
-[Trabalhando com tags]()<br>
+[Trabalhando com tags]()
 
 <br>
 
@@ -51,19 +51,19 @@
 [Consultando histórico de commits]()<br>
 [Desfazendo ações com checkout]()<br>
 [Desfazendo ações com revert e reset]()<br>
-[Resolvendo conflitos]()<br>
+[Resolvendo conflitos]()
 
 <br>
 
 ### Colaborando com projetos open source
 [O que são Issues ?]()<br>
 [Trabalhando com fork]()<br>
-[Realizando e aceitando pull requests]()<br>
+[Realizando e aceitando pull requests]()
 
 <br>
 
 ### Criação de currículo online
-[Curriculo original + Plugins do git para Vscode]()<br>
+[Curriculo original + Plugins do git para Vscode]()
 
 <br>
 
