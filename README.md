@@ -26,7 +26,7 @@
 [Ciclo de vida de arquivos no Git](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.2%20-%20O%20ciclo%20de%20vida%20dos%20status%20de%20arquivos%20no%20Git.md)<br>
 [Fazendo uso do .gitignore](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.3%20-%20Fazendo%20uso%20do%20gitignore.md)<br>
 [Como fazer os commits](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.4%20-%20Como%20fazer%20os%20commits.md)<br>
-[Como consultar o histórico do projeto](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.4%20-%20Como%20fazer%20os%20commits.md)<br>
+[Como consultar o histórico do projeto](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.5%20-%20Como%20consultar%20o%20histórico%20do%20projeto.md)<br>
 [Voltando no tempo com o Git](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.6%20-%20Voltando%20no%20tempo%20com%20o%20Git.md)<br>
 [Conhecendo alguns comandos úteis](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.7%20-%20Conhecendo%20alguns%20comandos%20úteis.md)<br>
 [Desfazendo e realizando ações no Git](/Conteúdo%20do%20curso/2%20-%20Git%20basico/2.8%20-%20Desfazendo%20e%20refazendo%20ações%20no%20Git.md)
