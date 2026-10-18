@@ -1,0 +1,147 @@
+# 2.8 · Desfazendo e refazendo ações no Git
+
+> **Em uma frase:** errou? Quase tudo no Git tem volta. O comando certo depende de **onde** está o erro: no arquivo, no staging ou em um commit.
+
+## 🧭 Mapa rápido: qual comando usar?
+
+| Onde está o que você quer desfazer | Comando |
+| --- | --- |
+| Alterei um arquivo e quero **descartar** as mudanças | `git restore <arquivo>` |
+| Dei `git add` e quero **tirar do staging** | `git restore --staged <arquivo>` |
+| Quero corrigir o **último commit** (mensagem ou arquivo esquecido) | `git commit --amend` |
+| Quero **apagar** commits que ainda não enviei | `git reset` |
+| Quero desfazer um commit que **já está no GitHub** | `git revert` |
+
+## ♻️ `git restore`: desfazer alterações em arquivos
+
+O `git restore` é o comando moderno (desde o Git 2.23) para restaurar arquivos.
+
+```bash
+# Descarta as alterações de um arquivo (volta ao último commit)
+git restore arquivo.txt
+
+# Descarta as alterações de TODOS os arquivos
+git restore .
+
+# Tira um arquivo do staging (as alterações continuam no arquivo)
+git restore --staged arquivo.txt
+
+# Tira todos os arquivos do staging
+git restore --staged .
+
+# Restaura um arquivo como ele estava em um commit específico
+git restore --source=<hash> arquivo.txt
+```
+
+> [!WARNING]
+> `git restore <arquivo>` (sem `--staged`) **apaga** as alterações não commitadas daquele arquivo. Elas não vão para a lixeira.
+
+## ⏪ `git reset`: desfazer commits
+
+O `git reset` faz a branch "voltar" para um commit anterior. Os commits que vieram depois saem do histórico. O que acontece com as alterações depende da opção:
+
+```bash
+# --soft: desfaz o commit, mas deixa as alterações no STAGING
+git reset --soft <hash>
+
+# --mixed (padrão): desfaz o commit e deixa as alterações nos ARQUIVOS,
+# fora do staging
+git reset --mixed <hash>
+git reset <hash>          # mesma coisa
+
+# --hard: desfaz o commit e APAGA as alterações
+git reset --hard <hash>
+```
+
+| Opção | Commits | Staging | Seus arquivos |
+| --- | --- | --- | --- |
+| `--soft` | Desfeitos | Alterações ficam aqui ✅ | Intactos |
+| `--mixed` | Desfeitos | Limpo | Alterações ficam aqui ✅ |
+| `--hard` | Desfeitos | Limpo | **Alterações apagadas** ❌ |
+
+> [!TIP]
+> Para desfazer só o **último** commit mantendo tudo, use `git reset --soft HEAD~1`. O `HEAD~1` significa "um commit antes do atual".
+
+## ✏️ `git commit --amend`: corrigir o último commit
+
+### Esqueci de incluir um arquivo
+
+```bash
+git add arquivo-esquecido.txt
+git commit --amend --no-edit   # --no-edit mantém a mesma mensagem
+```
+
+### Escrevi a mensagem errada
+
+```bash
+git commit --amend -m "Mensagem corrigida"
+```
+
+> [!IMPORTANT]
+> O `--amend` **substitui** o último commit por um novo (com outro hash). Só use em commits que você **ainda não enviou** para o GitHub; caso contrário, vai causar conflito no histórico de quem já baixou.
+
+## 🧩 Juntando vários commits em um (squash)
+
+Para juntar vários commits pequenos em um só, use o **rebase interativo**:
+
+```bash
+# Abre a lista dos 3 últimos commits para edição
+git rebase -i HEAD~3
+```
+
+O Git abre o editor com algo assim:
+
+```text
+pick a1b2c3d Cria formulário
+pick d4e5f6a Corrige typo
+pick 7a8b9c0 Ajusta espaçamento
+```
+
+1. Mantenha `pick` no **primeiro** commit (o que vai "receber" os outros).
+2. Troque `pick` por `squash` (ou só `s`) nos commits que você quer juntar a ele.
+3. Salve e feche. O Git vai pedir para você escrever a mensagem final do commit combinado.
+
+```text
+pick a1b2c3d Cria formulário
+s    d4e5f6a Corrige typo
+s    7a8b9c0 Ajusta espaçamento
+```
+
+> [!WARNING]
+> Assim como o `--amend`, o rebase interativo **reescreve o histórico**. Evite usar em commits que já foram compartilhados com outras pessoas.
+
+## 🔁 `git revert`: desfazer um commit com segurança
+
+```bash
+git revert <hash>
+```
+
+Cria um **novo commit** que faz o oposto do commit indicado. O commit original continua no histórico, então ninguém se confunde. O Git abre o editor com uma mensagem padrão ("Revert ..."); é só salvar e fechar.
+
+✅ É a forma recomendada para desfazer algo que **já foi enviado** para o repositório remoto.
+
+## 🕰️ E o `git checkout -- <arquivo>`?
+
+Antes do `git restore` existir, o jeito de descartar alterações em um arquivo era:
+
+```bash
+git checkout -- arquivo.txt
+```
+
+Ainda funciona e você vai ver isso em muitos tutoriais antigos. Mas como o `checkout` também serve para trocar de branch, o Git criou o `restore` (para arquivos) e o `switch` (para branches), que são mais claros.
+
+## 📌 Resumindo
+
+- **Arquivos:** `git restore` (descartar) e `git restore --staged` (tirar do staging).
+- **Último commit:** `git commit --amend` para corrigir mensagem ou incluir arquivo.
+- **Commits locais:** `git reset` (`--soft` / `--mixed` mantêm as alterações, `--hard` apaga).
+- **Commits já compartilhados:** `git revert`.
+- `--amend`, `reset` e `rebase -i` reescrevem o histórico: use só no que ainda não foi enviado.
+
+---
+
+<div align="center">
+
+[⬅️ 2.7 Comandos úteis](./07-comandos-uteis.md) &nbsp;|&nbsp; [🏠 Índice](../../README.md) &nbsp;|&nbsp; [3.1 Branches ➡️](../03-git-intermediario/01-branches.md)
+
+</div>

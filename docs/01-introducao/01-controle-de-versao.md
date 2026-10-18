@@ -1,0 +1,68 @@
+# 1.1 · O que é controle de versão?
+
+> **Em uma frase:** controle de versão é um sistema que guarda o histórico de tudo o que muda nos arquivos de um projeto: **quem** mudou, **quando** mudou e **o que** mudou.
+
+<img src="./img/2.jpg" alt="Ilustração sobre controle de versão" width="600">
+
+📄 [Material de apoio em PDF](./img/pdf-controle-de-versao.pdf)
+
+## 🤔 Por que isso existe?
+
+Imagine que você está escrevendo um trabalho e, para não perder nada, vai salvando cópias assim:
+
+```text
+trabalho.docx
+trabalho_final.docx
+trabalho_final_agora_vai.docx
+trabalho_final_revisado_v2_DEFINITIVO.docx
+```
+
+Funciona... até não funcionar mais. Você não lembra o que mudou de uma cópia para outra, as cópias ocupam espaço e, se duas pessoas editarem ao mesmo tempo, vira uma bagunça.
+
+Um **sistema de controle de versão** resolve esse problema. Pense nele como uma **máquina do tempo** para o seu projeto:
+
+- 📜 **Guarda o histórico completo:** cada alteração fica registrada com autor, data e uma descrição.
+- ⏪ **Permite voltar atrás:** se algo quebrou, dá para recuperar uma versão anterior.
+- 👥 **Facilita o trabalho em equipe:** várias pessoas podem mexer no mesmo projeto ao mesmo tempo e depois juntar as alterações.
+- 🧪 **Permite experimentar sem medo:** você pode testar uma ideia em uma "linha paralela" (uma *branch*) sem estragar a versão principal.
+
+## 🗂️ Os dois tipos de controle de versão
+
+### Centralizado
+
+Existe **um único servidor central** com todo o histórico. Cada pessoa baixa só a versão atual dos arquivos, trabalha neles e envia as mudanças de volta para o servidor.
+
+- ✅ Simples de entender.
+- ❌ Se o servidor cair (ou você estiver sem internet), ninguém consegue registrar alterações nem consultar o histórico.
+- Exemplos: **SVN (Subversion)** e **CVS**.
+
+### Distribuído
+
+**Cada pessoa tem uma cópia completa do projeto**, incluindo todo o histórico, no próprio computador.
+
+- ✅ Dá para trabalhar offline e registrar alterações localmente.
+- ✅ Se o servidor quebrar, qualquer cópia pode restaurar o projeto inteiro.
+- Exemplos: **Git** e **Mercurial**.
+
+| | Centralizado | Distribuído |
+| --- | --- | --- |
+| Onde fica o histórico | Só no servidor | Em cada computador |
+| Funciona offline? | Não | Sim |
+| Exemplos | SVN, CVS | Git, Mercurial |
+
+> [!NOTE]
+> O Git, que é o foco deste curso, é um sistema **distribuído**.
+
+## 📌 Resumindo
+
+- Controle de versão registra o histórico de alterações de um projeto.
+- Ele permite voltar no tempo, trabalhar em equipe e experimentar com segurança.
+- Existem dois modelos: **centralizado** (um servidor guarda tudo) e **distribuído** (cada pessoa tem uma cópia completa).
+
+---
+
+<div align="center">
+
+[🏠 Índice](../../README.md) &nbsp;|&nbsp; [Próximo: 1.2 O que é Git? ➡️](./02-o-que-e-git.md)
+
+</div>

@@ -1,0 +1,113 @@
+# 5.2 · Trabalhando com fork
+
+> **Em uma frase:** fazer um *fork* é criar **uma cópia de um repositório de outra pessoa dentro da sua conta do GitHub**, para você poder modificá-lo livremente e depois sugerir suas mudanças ao projeto original.
+
+## 🍴 Por que fazer um fork?
+
+Em projetos open source, você normalmente **não tem permissão** para enviar código direto para o repositório de outra pessoa. O fork resolve isso:
+
+1. Você cria uma cópia do projeto **na sua conta** (onde você tem permissão total).
+2. Faz as alterações na sua cópia.
+3. Envia um **pull request** pedindo para os donos do projeto original aceitarem suas mudanças ([próxima aula](./03-pull-requests.md)).
+
+### Fork x Clone
+
+| | Fork | Clone |
+| --- | --- | --- |
+| Onde acontece | No **GitHub** (servidor) | No **seu computador** |
+| Resultado | Uma cópia do repositório na **sua conta** do GitHub | Uma cópia local do repositório |
+| É um comando do Git? | ❌ Não, é um recurso do GitHub | ✅ Sim, `git clone` |
+
+### Os nomes dos repositórios envolvidos
+
+```text
+  Repositório original (upstream)        github.com/dono/projeto
+          │
+          │ Fork (botão no GitHub)
+          ▼
+  Seu fork (origin)                      github.com/voce/projeto
+          │
+          │ git clone
+          ▼
+  Seu computador (local)
+```
+
+- **upstream**: o repositório original, de onde você fez o fork.
+- **origin**: o seu fork, na sua conta.
+
+## 🛠️ Passo a passo
+
+### 1. Faça o fork
+
+1. Abra o repositório que você quer copiar.
+2. Clique no botão **Fork** (canto superior direito).
+3. Escolha a sua conta como destino e clique em **Create fork**.
+
+### 2. Clone o **seu** fork para o computador
+
+```bash
+git clone https://github.com/SEU-USUARIO/projeto.git
+cd projeto
+```
+
+> [!IMPORTANT]
+> Clone a URL do **seu fork** (com o seu usuário), não a do repositório original. Caso contrário, você não vai ter permissão para dar push.
+
+### 3. Conecte o repositório original como `upstream`
+
+O clone já cria o remoto `origin` (seu fork). Adicione também o original, para poder buscar as novidades dele:
+
+```bash
+git remote add upstream https://github.com/DONO-ORIGINAL/projeto.git
+
+# Confira: devem aparecer "origin" e "upstream"
+git remote -v
+```
+
+### 4. Trabalhe em uma branch nova
+
+```bash
+git switch -c minha-melhoria
+# ... faça suas alterações ...
+git add .
+git commit -m "Adiciona tradução para português"
+git push -u origin minha-melhoria
+```
+
+Agora é só abrir o **pull request** (veja a próxima aula).
+
+### 5. Mantenha seu fork atualizado
+
+O projeto original continua evoluindo. Para trazer as novidades para o seu fork:
+
+```bash
+# Vá para a sua main
+git switch main
+
+# Baixe as novidades do original
+git fetch upstream
+
+# Junte na sua main local
+git merge upstream/main
+
+# Envie a main atualizada para o seu fork no GitHub
+git push origin main
+```
+
+> [!TIP]
+> Na página do seu fork, o GitHub também mostra um botão **Sync fork**, que faz essa atualização com um clique (depois, basta rodar `git pull` no seu computador).
+
+## 📌 Resumindo
+
+- **Fork** = cópia de um repositório de outra pessoa na **sua conta** do GitHub.
+- **origin** = seu fork; **upstream** = repositório original.
+- Fluxo: Fork → `clone` do seu fork → `remote add upstream` → branch → commit → `push` → pull request.
+- Para atualizar: `git fetch upstream` + `git merge upstream/main` + `git push origin main`.
+
+---
+
+<div align="center">
+
+[⬅️ 5.1 Issues](./01-issues.md) &nbsp;|&nbsp; [🏠 Índice](../../README.md) &nbsp;|&nbsp; [5.3 Pull requests ➡️](./03-pull-requests.md)
+
+</div>

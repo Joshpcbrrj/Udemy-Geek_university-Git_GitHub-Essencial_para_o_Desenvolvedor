@@ -1,0 +1,111 @@
+# 2.7 · Conhecendo alguns comandos úteis
+
+> **Em uma frase:** `git mv` renomeia/move arquivos, `git rm` remove arquivos e `git diff` mostra exatamente o que mudou, tudo de um jeito que o Git entende.
+
+## 📁 `git mv`: renomear ou mover arquivos
+
+Funciona como o "renomear" do sistema, mas já avisa o Git da mudança (e deixa a alteração pronta no staging).
+
+```bash
+# Renomear
+git mv nome-antigo.txt nome-novo.txt
+
+# Mover para outra pasta
+git mv arquivo.txt pasta/arquivo.txt
+
+# Depois, registre a mudança
+git commit -m "Renomeia nome-antigo.txt para nome-novo.txt"
+```
+
+> [!NOTE]
+> Se você renomear pelo explorador de arquivos, o Git vê como "um arquivo apagado + um arquivo novo". Ao rodar `git add` em ambos, ele percebe que é uma renomeação. O `git mv` só faz isso tudo em um passo.
+
+## 🗑️ `git rm`: remover arquivos
+
+### Remover do projeto **e** do computador
+
+```bash
+git rm arquivo.txt
+git commit -m "Remove arquivo.txt"
+```
+
+O arquivo é apagado da pasta e a remoção fica pronta para o próximo commit.
+
+> [!NOTE]
+> Remover um arquivo **não apaga o histórico dele**. As versões antigas continuam nos commits anteriores e podem ser recuperadas.
+
+### Forçar a remoção (`-f`)
+
+```bash
+git rm -f arquivo.txt
+```
+
+Se o arquivo tiver alterações que **ainda não foram commitadas**, o Git se recusa a removê-lo para você não perder trabalho. O `-f` (*force*) força a remoção mesmo assim.
+
+> [!WARNING]
+> Com `-f`, as alterações não commitadas daquele arquivo são **perdidas**.
+
+### Parar de rastrear, mas manter o arquivo no computador (`--cached`)
+
+```bash
+git rm --cached senhas.env
+git commit -m "Para de rastrear senhas.env"
+```
+
+Muito útil quando você commitou algo por engano e quer passar a ignorá-lo (combine com o [`.gitignore`](./03-gitignore.md)).
+
+## 🔍 `git diff`: ver o que mudou
+
+O `git diff` mostra as diferenças **linha a linha**. Linhas com `+` (verde) foram adicionadas e linhas com `-` (vermelho) foram removidas.
+
+```diff
+- <h1>Olá mundo</h1>
++ <h1>Olá, Git!</h1>
+```
+
+### Formas de uso
+
+```bash
+# 1. O que mudou e AINDA NÃO foi para o staging
+git diff
+
+# 2. O que JÁ está no staging (vai entrar no próximo commit)
+git diff --staged     # ou: git diff --cached
+
+# 3. Diferença entre dois commits
+git diff <hash-1> <hash-2>
+
+# 4. Só de um arquivo específico
+git diff nome-do-arquivo
+
+# 5. Resumo: quais arquivos mudaram e quantas linhas
+git diff --stat
+```
+
+| Comando | Compara |
+| --- | --- |
+| `git diff` | Working directory × Staging area |
+| `git diff --staged` | Staging area × Último commit |
+| `git diff <a> <b>` | Commit A × Commit B |
+| `git diff --stat` | Mostra só um resumo |
+
+> [!TIP]
+> Criar o hábito de rodar `git diff --staged` **antes de cada commit** evita mandar coisas que você não queria (como um `console.log` esquecido).
+
+## 📌 Resumindo
+
+| Comando | Para que serve |
+| --- | --- |
+| `git mv antigo novo` | Renomear ou mover arquivos |
+| `git rm arquivo` | Apagar o arquivo e registrar a remoção |
+| `git rm --cached arquivo` | Parar de rastrear, mantendo o arquivo no disco |
+| `git diff` | Ver alterações ainda não preparadas |
+| `git diff --staged` | Ver o que vai entrar no próximo commit |
+
+---
+
+<div align="center">
+
+[⬅️ 2.6 Voltando no tempo](./06-voltando-no-tempo.md) &nbsp;|&nbsp; [🏠 Índice](../../README.md) &nbsp;|&nbsp; [2.8 Desfazendo ações ➡️](./08-desfazendo-acoes.md)
+
+</div>
