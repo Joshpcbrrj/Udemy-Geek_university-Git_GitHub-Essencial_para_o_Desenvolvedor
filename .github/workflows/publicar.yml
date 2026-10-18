@@ -1,0 +1,73 @@
+name: Publicar site e EPUB
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar MkDocs, Pandoc, mermaid-cli e rsvg
+        run: |
+          pip install -r requirements.txt
+          npm install -g @mermaid-js/mermaid-cli@11.17.0
+          wget -q https://github.com/jgm/pandoc/releases/download/3.5/pandoc-3.5-1-amd64.deb
+          sudo dpkg -i pandoc-3.5-1-amd64.deb
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+
+      - name: Gerar o EPUB
+        run: python scripts/build_epub.py
+
+      - name: Guardar o EPUB nos artefatos da execução
+        uses: actions/upload-artifact@v4
+        with:
+          name: epub
+          path: docs/downloads/git-e-github-essencial.epub
+
+      - name: Gerar o site
+        run: mkdocs build
+
+      - name: Preparar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Enviar o site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

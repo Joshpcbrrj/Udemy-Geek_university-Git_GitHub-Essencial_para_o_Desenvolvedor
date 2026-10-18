@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="2400" fill="url(#fundo)"/>
+
+  <!-- Grafo de commits decorativo -->
+  <g fill="none" stroke-width="22" stroke-linecap="round">
+    <path d="M220 900 H1380" stroke="#f97316"/>
+    <path d="M520 900 C620 900 620 680 760 680 H1000 C1140 680 1140 900 1240 900" stroke="#38bdf8"/>
+    <path d="M760 900 C860 900 860 1120 980 1120 H1100" stroke="#a3e635"/>
+  </g>
+  <g stroke="#111827" stroke-width="14">
+    <circle cx="220" cy="900" r="46" fill="#f97316"/>
+    <circle cx="520" cy="900" r="46" fill="#f97316"/>
+    <circle cx="760" cy="680" r="46" fill="#38bdf8"/>
+    <circle cx="1000" cy="680" r="46" fill="#38bdf8"/>
+    <circle cx="980" cy="1120" r="46" fill="#a3e635"/>
+    <circle cx="1100" cy="1120" r="46" fill="#a3e635"/>
+    <circle cx="1240" cy="900" r="46" fill="#f97316"/>
+    <circle cx="1380" cy="900" r="46" fill="#f97316"/>
+  </g>
+
+  <text x="800" y="1480" text-anchor="middle" font-family="DejaVu Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#ffffff">Git e GitHub</text>
+  <text x="800" y="1650" text-anchor="middle" font-family="DejaVu Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="150" font-weight="700" fill="#f97316">Essencial</text>
+  <text x="800" y="1800" text-anchor="middle" font-family="DejaVu Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="62" fill="#d1d5db">Resumo do curso para quem está começando</text>
+
+  <rect x="560" y="1890" width="480" height="6" rx="3" fill="#f97316"/>
+
+  <text x="800" y="2160" text-anchor="middle" font-family="DejaVu Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="64" fill="#ffffff">Josué B. Almeida</text>
+  <text x="800" y="2250" text-anchor="middle" font-family="DejaVu Sans, Segoe UI, Helvetica, Arial, sans-serif" font-size="44" fill="#9ca3af">Baseado no curso da Geek University</text>
+</svg>

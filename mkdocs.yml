@@ -1,0 +1,137 @@
+site_name: Git e GitHub Essencial
+site_description: Resumo completo do curso Git e GitHub Essencial para o Desenvolvedor (Geek University), escrito para quem está começando.
+site_author: Josué B. Almeida
+site_url: https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/
+repo_url: https://github.com/Joshpcbrrj/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor
+repo_name: Joshpcbrrj/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor
+edit_uri: edit/main/docs/
+copyright: Texto sob licença CC BY 4.0 · Material de apoio do curso © Geek University
+
+docs_dir: docs
+hooks:
+  - scripts/mkdocs_hooks.py
+
+theme:
+  name: material
+  language: pt-BR
+  icon:
+    logo: fontawesome/brands/git-alt
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Mudar para o modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para o modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Início: index.md
+  - Guia rápido: guia-rapido.md
+  - 1 · Introdução:
+      - 1.1 O que é controle de versão?: 01-introducao/01-controle-de-versao.md
+      - 1.2 O que é o Git?: 01-introducao/02-o-que-e-git.md
+      - 1.3 Git não é GitHub: 01-introducao/03-git-nao-e-github.md
+      - 1.4 Instalando e configurando: 01-introducao/04-instalando-o-git.md
+      - 1.5 Usuários locais: 01-introducao/05-usuarios-locais.md
+  - 2 · Git básico:
+      - 2.1 Como o Git funciona: 02-git-basico/01-como-o-git-funciona.md
+      - 2.2 Ciclo de vida dos arquivos: 02-git-basico/02-ciclo-de-vida-dos-arquivos.md
+      - 2.3 .gitignore: 02-git-basico/03-gitignore.md
+      - 2.4 Commits: 02-git-basico/04-commits.md
+      - 2.5 Histórico do projeto: 02-git-basico/05-historico-do-projeto.md
+      - 2.6 Voltando no tempo: 02-git-basico/06-voltando-no-tempo.md
+      - 2.7 Comandos úteis: 02-git-basico/07-comandos-uteis.md
+      - 2.8 Desfazendo ações: 02-git-basico/08-desfazendo-acoes.md
+  - 3 · Git intermediário:
+      - 3.1 Branches: 03-git-intermediario/01-branches.md
+      - 3.2 Merge: 03-git-intermediario/02-merge.md
+      - 3.3 Rebase: 03-git-intermediario/03-rebase.md
+      - 3.4 Clone e push: 03-git-intermediario/04-clone-e-push.md
+      - 3.5 Fetch e pull: 03-git-intermediario/05-fetch-e-pull.md
+      - 3.6 Bare repository: 03-git-intermediario/06-bare-repository.md
+      - 3.7 Tags: 03-git-intermediario/07-tags.md
+  - 4 · Git avançado:
+      - 4.1 Repositório remoto: 04-git-avancado/01-repositorio-remoto.md
+      - 4.2 Clone e pull: 04-git-avancado/02-clone-e-pull.md
+      - 4.3 Colaboradores: 04-git-avancado/03-colaboradores.md
+      - 4.4 Histórico de commits: 04-git-avancado/04-historico-de-commits.md
+      - 4.5 Desfazendo com checkout: 04-git-avancado/05-desfazendo-com-checkout.md
+      - 4.6 Revert e reset: 04-git-avancado/06-revert-e-reset.md
+      - 4.7 Resolvendo conflitos: 04-git-avancado/07-conflitos.md
+  - 5 · Open source:
+      - 5.1 Issues: 05-open-source/01-issues.md
+      - 5.2 Fork: 05-open-source/02-fork.md
+      - 5.3 Pull requests: 05-open-source/03-pull-requests.md
+  - 6 · Currículo online:
+      - 6.1 Currículo e plugins do VS Code: 06-curriculo-online/01-curriculo-e-plugins.md
+  - 7 · Markdown e Gist:
+      - 7.1 Markdown: 07-markdown-e-gist/01-markdown.md
+      - 7.2 Gists: 07-markdown-e-gist/02-gists.md
+      - Modelo de README: 07-markdown-e-gist/modelo-readme/modelo-de-readme.md
+  - 8 · Extras:
+      - 8.1 git stash: 08-extras/01-git-stash.md
+      - 8.2 Chave SSH: 08-extras/02-chave-ssh.md
+      - 8.3 GitHub Flow: 08-extras/03-github-flow.md
+      - 8.4 GitHub Actions: 08-extras/04-github-actions.md
+      - 8.5 Erros comuns: 08-extras/05-erros-comuns.md

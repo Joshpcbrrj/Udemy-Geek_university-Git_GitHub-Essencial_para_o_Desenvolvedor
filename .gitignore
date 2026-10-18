@@ -1,0 +1,8 @@
+# Saídas geradas automaticamente (site e EPUB)
+site/
+build/
+docs/downloads/
+
+# Python
+__pycache__/
+.venv/

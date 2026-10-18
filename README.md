@@ -11,6 +11,8 @@
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 ![Udemy](https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white)
 
+### [🌐 Ler no site](https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/) · [📖 Baixar o EPUB](https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/downloads/git-e-github-essencial.epub)
+
 [📜 Certificado](./docs/certificado/certificado.pdf) ·
 [📋 Conteúdo programático](./docs/certificado/conteudo-programatico.png) ·
 [⚡ Guia rápido de comandos](./docs/guia-rapido.md)
@@ -27,6 +29,7 @@ As explicações foram escritas em **linguagem simples**, com analogias, diagram
 
 ## 🧭 Como usar este material
 
+- **Quer a melhor experiência de leitura?** Use o **[site](https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/)**, com busca, menu e modo escuro, ou baixe o **[EPUB](https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/downloads/git-e-github-essencial.epub)** para ler offline.
 - **Começando do zero?** Siga as aulas **na ordem**. Cada aula tem links de "Anterior" e "Próximo" no final.
 - **Já sabe o básico?** Use o índice abaixo para ir direto ao assunto.
 - **Precisa só lembrar um comando?** Vá para o **[⚡ Guia rápido de comandos](./docs/guia-rapido.md)**.

@@ -1,0 +1,16 @@
+/* Imagens das aulas nunca passam da largura do texto */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Diagramas Mermaid centralizados */
+.md-typeset .mermaid {
+  text-align: center;
+}
+
+/* "Em uma frase": a primeira citação da aula ganha destaque */
+.md-typeset h1 + blockquote {
+  border-left-color: var(--md-accent-fg-color);
+  font-size: 0.9rem;
+}

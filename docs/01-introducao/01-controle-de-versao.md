@@ -2,23 +2,6 @@
 
 > **Em uma frase:** controle de versão é um sistema que guarda o histórico de tudo o que muda nos arquivos de um projeto: **quem** mudou, **quando** mudou e **o que** mudou.
 
-```mermaid
-flowchart TB
-    subgraph C["Centralizado"]
-        direction TB
-        S[("Servidor<br/>histórico completo")]
-        A1["Pessoa A<br/>só os arquivos atuais"] <--> S
-        B1["Pessoa B<br/>só os arquivos atuais"] <--> S
-    end
-    subgraph D["Distribuído"]
-        direction TB
-        R[("Servidor<br/>histórico completo")]
-        A2["Pessoa A<br/>histórico completo"] <--> R
-        B2["Pessoa B<br/>histórico completo"] <--> R
-        A2 <-.-> B2
-    end
-```
-
 📄 [Material de apoio em PDF](./img/pdf-controle-de-versao.pdf)
 
 ## 🤔 Por que isso existe?
@@ -47,6 +30,13 @@ Um **sistema de controle de versão** resolve esse problema. Pense nele como uma
 
 Existe **um único servidor central** com todo o histórico. Cada pessoa baixa só a versão atual dos arquivos, trabalha neles e envia as mudanças de volta para o servidor.
 
+```mermaid
+flowchart TB
+    S[("Servidor<br/>histórico completo")]
+    A["Pessoa A<br/>só os arquivos atuais"] <--> S
+    B["Pessoa B<br/>só os arquivos atuais"] <--> S
+```
+
 - ✅ Simples de entender.
 - ❌ Se o servidor cair (ou você estiver sem internet), ninguém consegue registrar alterações nem consultar o histórico.
 - Exemplos: **SVN (Subversion)** e **CVS**.
@@ -54,6 +44,14 @@ Existe **um único servidor central** com todo o histórico. Cada pessoa baixa s
 ### Distribuído
 
 **Cada pessoa tem uma cópia completa do projeto**, incluindo todo o histórico, no próprio computador.
+
+```mermaid
+flowchart TB
+    S[("Servidor<br/>histórico completo")]
+    A["Pessoa A<br/>histórico completo"] <--> S
+    B["Pessoa B<br/>histórico completo"] <--> S
+    A <-. "também podem trocar<br/>commits entre si" .-> B
+```
 
 - ✅ Dá para trabalhar offline e registrar alterações localmente.
 - ✅ Se o servidor quebrar, qualquer cópia pode restaurar o projeto inteiro.
