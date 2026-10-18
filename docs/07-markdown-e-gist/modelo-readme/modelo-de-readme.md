@@ -4,7 +4,7 @@
 Um ou dois parágrafos sobre seu projeto e
 o que ele faz.
 
-![](./pag.png)
+![Captura de tela do projeto](./pag.svg)
 
 ## Instalação
 

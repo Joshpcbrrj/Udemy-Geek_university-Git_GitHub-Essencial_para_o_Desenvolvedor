@@ -170,16 +170,20 @@ Assista no [YouTube][yt] ou leia a [documentação][docs].
 ```markdown
 ![Texto alternativo](https://exemplo.com/imagem.png)
 
-![Imagem com título](img/1.webp "Título ao passar o mouse")
+![Imagem com título](img/exemplo.svg "Título ao passar o mouse")
 ```
+
+**Resultado:**
+
+![Ilustração: texto em Markdown à esquerda e o resultado formatado à direita](./img/exemplo.svg "Título ao passar o mouse")
 
 Para **controlar o tamanho**, use HTML:
 
 ```html
-<img src="img/1.webp" alt="Ícone do Gist" width="200">
+<img src="img/exemplo.svg" alt="Exemplo de Markdown" width="200">
 ```
 
-<img src="./img/1.webp" alt="Ícone do Gist" width="200">
+<img src="./img/exemplo.svg" alt="Exemplo de Markdown" width="200">
 
 ### Citações
 

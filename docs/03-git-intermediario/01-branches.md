@@ -2,8 +2,6 @@
 
 > **Em uma frase:** uma branch é uma "linha do tempo paralela" do projeto, onde você pode trabalhar à vontade sem mexer na versão principal.
 
-<img src="./img/1.jpg" alt="Diagrama de branches no Git" width="800">
-
 ## 🌳 O que é uma branch?
 
 Imagine que seu projeto é um livro. A branch `main` é a versão oficial. Você quer testar um final alternativo, mas sem estragar o livro original. Então você faz uma **cópia de rascunho**, escreve o final novo nela e, se ficar bom, incorpora ao livro oficial. Se ficar ruim, é só jogar o rascunho fora.

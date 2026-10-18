@@ -2,8 +2,6 @@
 
 > **Em uma frase:** o **Git** é a ferramenta que controla as versões no seu computador; o **GitHub** é um site que guarda repositórios Git na internet e adiciona recursos de colaboração.
 
-<img src="./img/4.png" alt="Comparação entre Git e GitHub" width="600">
-
 📄 [Material de apoio em PDF](./img/pdf-git-nao-e-github.pdf)
 
 ## 🎯 A analogia que resolve a confusão

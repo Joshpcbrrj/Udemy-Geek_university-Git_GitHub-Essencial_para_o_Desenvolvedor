@@ -2,8 +2,6 @@
 
 > **Em uma frase:** o rebase "recorta" os commits da sua branch e "cola" eles no final de outra branch, deixando o histórico em uma linha reta, sem commits de merge.
 
-<img src="./img/3.png" alt="Diagrama comparando merge e rebase" width="600">
-
 ## 🧱 O que é rebase?
 
 Imagine que você criou a branch `feature` a partir da `main`. Enquanto você trabalhava, outras pessoas adicionaram commits na `main`:

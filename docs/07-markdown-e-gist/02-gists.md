@@ -2,8 +2,6 @@
 
 > **Em uma frase:** um *Gist* é um jeito rápido de guardar e compartilhar **pequenos trechos de código ou anotações** no GitHub, sem precisar criar um repositório inteiro.
 
-<img src="./img/1.webp" alt="Logo do GitHub Gist" width="800">
-
 ## 📌 O que é um Gist?
 
 Pense no Gist como um **post-it virtual para programadores**. Ele é perfeito para:

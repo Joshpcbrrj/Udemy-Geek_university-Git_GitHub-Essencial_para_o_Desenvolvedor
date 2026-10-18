@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320" viewBox="0 0 640 320" role="img" aria-label="Ilustração de exemplo: documento Markdown">
+  <rect width="640" height="320" rx="24" fill="#24292f"/>
+  <rect x="40" y="40" width="250" height="240" rx="14" fill="#ffffff"/>
+  <text x="62" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#24292f"># Título</text>
+  <rect x="62" y="114" width="200" height="12" rx="6" fill="#d0d7de"/>
+  <rect x="62" y="138" width="170" height="12" rx="6" fill="#d0d7de"/>
+  <text x="62" y="188" font-family="Consolas, monospace" font-size="22" fill="#0969da">- item</text>
+  <text x="62" y="220" font-family="Consolas, monospace" font-size="22" fill="#0969da">**negrito**</text>
+  <path d="M318 160 h56 m-18 -18 l18 18 l-18 18" stroke="#f0883e" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="400" y="40" width="200" height="240" rx="14" fill="#ffffff"/>
+  <text x="420" y="92" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#24292f">Título</text>
+  <rect x="420" y="114" width="160" height="12" rx="6" fill="#d0d7de"/>
+  <circle cx="428" cy="176" r="6" fill="#24292f"/>
+  <text x="444" y="184" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#24292f">item</text>
+  <text x="420" y="222" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#24292f">negrito</text>
+</svg>

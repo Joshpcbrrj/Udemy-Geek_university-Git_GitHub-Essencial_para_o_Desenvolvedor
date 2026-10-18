@@ -2,8 +2,6 @@
 
 > **Em uma frase:** o Git é o sistema de controle de versão **distribuído** mais usado do mundo. Ele roda no seu computador e registra todo o histórico do seu projeto.
 
-<img src="./img/3.png" alt="Logo do Git" width="600">
-
 📄 [Material de apoio em PDF](./img/pdf-o-que-e-git.pdf)
 
 ## 📖 Um pouco de história

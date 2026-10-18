@@ -2,8 +2,6 @@
 
 > **Em uma frase:** o Git tira "fotos" (snapshots) do seu projeto sempre que você pede, e guarda essas fotos em ordem dentro de uma pasta escondida chamada `.git`.
 
-<img src="./img/1.png" alt="Diagrama do funcionamento do Git" width="850">
-
 📄 [Material de apoio em PDF](./img/pdf-como-o-git-funciona.pdf)
 
 ## 📦 1. Repositório
@@ -41,9 +39,10 @@ Este é o conceito mais importante para entender o Git. Todo arquivo passa por t
 | **Staging Area** | Área de preparação, *index* | Uma "sala de espera" onde você coloca as alterações que vão entrar no próximo commit. |
 | **Repository** | Repositório local, `.git` | Onde os commits ficam guardados para sempre. |
 
-```text
- Working Directory  ──git add──▶  Staging Area  ──git commit──▶  Repositório
-   (você edita)                (você escolhe)              (fica registrado)
+```mermaid
+flowchart LR
+    WD["Working Directory<br/>(você edita)"] -- "git add" --> SA["Staging Area<br/>(você escolhe)"]
+    SA -- "git commit" --> REPO["Repositório<br/>(fica registrado)"]
 ```
 
 > [!TIP]

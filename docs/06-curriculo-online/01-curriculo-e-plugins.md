@@ -35,8 +35,6 @@ https://seu-usuario.github.io
 
 ## 🔦 Extensão GitLens
 
-<img src="./img/1.png" alt="Extensão GitLens no VS Code" width="800">
-
 O **GitLens** mostra as informações do Git **dentro do código**, enquanto você trabalha. Os recursos mais úteis para quem está começando:
 
 | Recurso | O que faz |
@@ -52,8 +50,6 @@ O **GitLens** mostra as informações do Git **dentro do código**, enquanto voc
 > O GitLens tem uma versão gratuita bem completa e alguns recursos pagos (GitLens Pro). Tudo o que está na tabela acima funciona na versão gratuita.
 
 ## 📈 Extensão Git History
-
-<img src="./img/2.png" alt="Extensão Git History no VS Code" width="700">
 
 O **Git History** foca em uma coisa: mostrar o **histórico de commits** de forma visual.
 

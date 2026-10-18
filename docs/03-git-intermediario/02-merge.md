@@ -2,8 +2,6 @@
 
 > **Em uma frase:** merge é o comando que **junta** o trabalho de uma branch em outra, por exemplo, trazer a funcionalidade pronta da branch `feature` para a `main`.
 
-<img src="./img/2.png" alt="Diagrama de merge entre branches" width="750">
-
 ## 🔀 Como o merge funciona?
 
 Você terminou uma funcionalidade na branch `feature` e quer levá-la para a `main`. O passo a passo é:

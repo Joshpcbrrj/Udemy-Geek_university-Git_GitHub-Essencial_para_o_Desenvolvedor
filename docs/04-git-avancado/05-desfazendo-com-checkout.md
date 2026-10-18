@@ -45,17 +45,7 @@ O `HEAD` significa "o último commit". Esse comando restaura o arquivo como esta
 git checkout <hash-do-commit>
 ```
 
-Seus arquivos voltam a ficar exatamente como estavam naquele commit. Você entra no modo **"detached HEAD"** (HEAD desanexado), ou seja, não está em nenhuma branch.
-
-- Para **voltar ao presente**: `git checkout main` (ou `git switch main`).
-- Para **trabalhar a partir dali**, crie uma branch:
-
-  ```bash
-  git switch -c nova-branch
-  ```
-
-> [!IMPORTANT]
-> Esse comando **não apaga** nenhum commit. Ele só muda o que você está vendo. Os commits mais novos continuam na branch `main`.
+Seus arquivos voltam a ficar como estavam naquele commit, em modo **"detached HEAD"**, sem apagar nada. Para voltar: `git switch main`. Esse uso foi explicado em detalhes na aula [2.6 Voltando no tempo](../02-git-basico/06-voltando-no-tempo.md).
 
 ## 🔁 Equivalências: `checkout` × comandos modernos
 

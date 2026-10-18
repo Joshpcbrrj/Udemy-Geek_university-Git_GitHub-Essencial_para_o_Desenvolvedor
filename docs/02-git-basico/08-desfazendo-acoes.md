@@ -36,31 +36,15 @@ git restore --source=<hash> arquivo.txt
 > [!WARNING]
 > `git restore <arquivo>` (sem `--staged`) **apaga** as alterações não commitadas daquele arquivo. Elas não vão para a lixeira.
 
-## ⏪ `git reset`: desfazer commits
+## ⏪ Desfazendo o último commit
 
-O `git reset` faz a branch "voltar" para um commit anterior. Os commits que vieram depois saem do histórico. O que acontece com as alterações depende da opção:
+O caso mais comum: você fez um commit e quer desfazê-lo, **mantendo** as alterações para ajustar e commitar de novo.
 
 ```bash
-# --soft: desfaz o commit, mas deixa as alterações no STAGING
-git reset --soft <hash>
-
-# --mixed (padrão): desfaz o commit e deixa as alterações nos ARQUIVOS,
-# fora do staging
-git reset --mixed <hash>
-git reset <hash>          # mesma coisa
-
-# --hard: desfaz o commit e APAGA as alterações
-git reset --hard <hash>
+git reset --soft HEAD~1
 ```
 
-| Opção | Commits | Staging | Seus arquivos |
-| --- | --- | --- | --- |
-| `--soft` | Desfeitos | Alterações ficam aqui ✅ | Intactos |
-| `--mixed` | Desfeitos | Limpo | Alterações ficam aqui ✅ |
-| `--hard` | Desfeitos | Limpo | **Alterações apagadas** ❌ |
-
-> [!TIP]
-> Para desfazer só o **último** commit mantendo tudo, use `git reset --soft HEAD~1`. O `HEAD~1` significa "um commit antes do atual".
+O `HEAD~1` significa "um commit antes do atual". Para os outros modos do `reset` (incluindo o perigoso `--hard`), veja a aula [4.6 Revert e reset](../04-git-avancado/06-revert-e-reset.md).
 
 ## ✏️ `git commit --amend`: corrigir o último commit
 
@@ -110,31 +94,18 @@ s    7a8b9c0 Ajusta espaçamento
 > [!WARNING]
 > Assim como o `--amend`, o rebase interativo **reescreve o histórico**. Evite usar em commits que já foram compartilhados com outras pessoas.
 
-## 🔁 `git revert`: desfazer um commit com segurança
+## 🔁 Commit que já foi para o GitHub?
 
-```bash
-git revert <hash>
-```
+Use `git revert <hash>`: ele cria um novo commit que desfaz o anterior, sem reescrever o histórico. Detalhes na aula [4.6](../04-git-avancado/06-revert-e-reset.md).
 
-Cria um **novo commit** que faz o oposto do commit indicado. O commit original continua no histórico, então ninguém se confunde. O Git abre o editor com uma mensagem padrão ("Revert ..."); é só salvar e fechar.
-
-✅ É a forma recomendada para desfazer algo que **já foi enviado** para o repositório remoto.
-
-## 🕰️ E o `git checkout -- <arquivo>`?
-
-Antes do `git restore` existir, o jeito de descartar alterações em um arquivo era:
-
-```bash
-git checkout -- arquivo.txt
-```
-
-Ainda funciona e você vai ver isso em muitos tutoriais antigos. Mas como o `checkout` também serve para trocar de branch, o Git criou o `restore` (para arquivos) e o `switch` (para branches), que são mais claros.
+> [!NOTE]
+> Em tutoriais antigos você vai ver `git checkout -- arquivo` no lugar de `git restore arquivo`. Os dois fazem a mesma coisa; a aula [4.5](../04-git-avancado/05-desfazendo-com-checkout.md) mostra as equivalências.
 
 ## 📌 Resumindo
 
 - **Arquivos:** `git restore` (descartar) e `git restore --staged` (tirar do staging).
-- **Último commit:** `git commit --amend` para corrigir mensagem ou incluir arquivo.
-- **Commits locais:** `git reset` (`--soft` / `--mixed` mantêm as alterações, `--hard` apaga).
+- **Último commit:** `git commit --amend` para corrigir mensagem ou incluir arquivo; `git reset --soft HEAD~1` para desfazê-lo.
+- **Vários commits em um:** `git rebase -i`.
 - **Commits já compartilhados:** `git revert`.
 - `--amend`, `reset` e `rebase -i` reescrevem o histórico: use só no que ainda não foi enviado.
 

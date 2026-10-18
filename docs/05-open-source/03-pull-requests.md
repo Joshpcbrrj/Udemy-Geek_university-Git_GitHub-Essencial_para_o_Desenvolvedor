@@ -2,7 +2,16 @@
 
 > **Em uma frase:** um *pull request* (PR) é um **pedido** para que as alterações de uma branch (sua ou do seu fork) sejam revisadas e incorporadas ao projeto.
 
-<img src="./img/2.webp" alt="Fluxo de um pull request no GitHub" width="700">
+```mermaid
+flowchart LR
+    A[Fork do projeto] --> B[Cria uma branch]
+    B --> C[Faz commits]
+    C --> D[git push]
+    D --> E[Abre o pull request]
+    E --> F{Revisão}
+    F -- "pede ajustes" --> C
+    F -- "aprovado" --> G[Merge no projeto]
+```
 
 ## 📨 O que é um pull request?
 

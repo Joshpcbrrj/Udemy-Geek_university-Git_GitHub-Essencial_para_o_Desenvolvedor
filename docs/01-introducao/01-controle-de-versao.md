@@ -2,7 +2,22 @@
 
 > **Em uma frase:** controle de versão é um sistema que guarda o histórico de tudo o que muda nos arquivos de um projeto: **quem** mudou, **quando** mudou e **o que** mudou.
 
-<img src="./img/2.jpg" alt="Ilustração sobre controle de versão" width="600">
+```mermaid
+flowchart TB
+    subgraph C["Centralizado"]
+        direction TB
+        S[("Servidor<br/>histórico completo")]
+        A1["Pessoa A<br/>só os arquivos atuais"] <--> S
+        B1["Pessoa B<br/>só os arquivos atuais"] <--> S
+    end
+    subgraph D["Distribuído"]
+        direction TB
+        R[("Servidor<br/>histórico completo")]
+        A2["Pessoa A<br/>histórico completo"] <--> R
+        B2["Pessoa B<br/>histórico completo"] <--> R
+        A2 <-.-> B2
+    end
+```
 
 📄 [Material de apoio em PDF](./img/pdf-controle-de-versao.pdf)
 

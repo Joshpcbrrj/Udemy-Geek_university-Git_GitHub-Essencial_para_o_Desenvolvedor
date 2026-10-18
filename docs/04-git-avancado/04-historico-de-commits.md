@@ -2,48 +2,23 @@
 
 > **Em uma frase:** você pode ver o histórico do projeto de três jeitos: pelo **terminal** (`git log`), por **interfaces gráficas** no editor ou pela **página do GitHub**.
 
-## 💻 1. Pelo terminal: `git log`
+## 💻 1. Pelo terminal
+
+O `git log` e seus filtros (`--oneline`, `--author`, `--since`, `--grep`...) foram vistos na aula [2.5 Como consultar o histórico](../02-git-basico/05-historico-do-projeto.md). Dois comandos complementam o que você já sabe:
 
 ```bash
-git log
-```
-
-Mostra os commits do mais recente para o mais antigo, com hash, autor, data e mensagem.
-
-### Variações mais usadas
-
-```bash
-# Uma linha por commit (visão geral rápida)
-git log --oneline
-
-# Filtrar por autor
-git log --author="Maria"
-
-# Filtrar por período (formato AAAA-MM-DD)
-git log --since=2023-01-01
-git log --until=2023-07-01
-
-# Filtrar por palavra na mensagem
-git log --grep="login"
-
-# Combinar filtros
-git log --oneline --author="João"
-
-# Ver o histórico de um arquivo específico
+# Histórico de um arquivo específico
 git log --oneline -- caminho/do/arquivo.txt
 
-# Ver quem alterou cada linha de um arquivo (e em qual commit)
+# Quem alterou cada linha de um arquivo (e em qual commit)
 git blame caminho/do/arquivo.txt
 ```
-
-> [!TIP]
-> Para todas as opções, consulte `git help log` ou revise a aula [2.5 Como consultar o histórico](../02-git-basico/05-historico-do-projeto.md).
 
 ## 🖼️ 2. Por interfaces gráficas
 
 Muitas ferramentas desenham o histórico como um **gráfico colorido**, onde cada linha vertical é uma branch e cada bolinha é um commit. Fica muito mais fácil enxergar quando as branches foram criadas e mescladas.
 
-<img src="./img/2.png" alt="Histórico de commits exibido em gráfico por uma interface gráfica" width="900">
+<img src="./img/2.png" alt="Histórico de commits exibido em gráfico pela extensão Git Graph do VS Code" width="900">
 
 Algumas opções populares:
 
@@ -59,14 +34,12 @@ No GitHub (e também no GitLab e no Bitbucket), dá para navegar pelo histórico
 2. Clique no link de **commits** (ícone de relógio 🕒, perto do botão "Code").
 3. Clique em qualquer commit para ver **exatamente** quais linhas foram adicionadas (verde) e removidas (vermelho).
 
-<img src="./img/3.png" alt="Lista de commits na interface web do GitHub" width="600">
-
 > [!TIP]
 > Dentro de um arquivo no GitHub, o botão **History** mostra só os commits que mexeram naquele arquivo, e o botão **Blame** mostra quem alterou cada linha.
 
 ## 📌 Resumindo
 
-- **Terminal:** `git log` (e suas variações) e `git blame`.
+- **Terminal:** `git log -- arquivo` (histórico de um arquivo) e `git blame` (autor de cada linha).
 - **Interfaces gráficas:** visualização em gráfico das branches e commits.
 - **GitHub:** aba de commits, com o "diff" colorido de cada alteração.
 

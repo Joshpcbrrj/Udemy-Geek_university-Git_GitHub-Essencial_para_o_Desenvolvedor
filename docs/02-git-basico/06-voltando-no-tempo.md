@@ -33,24 +33,13 @@ Você fica em um estado chamado **"detached HEAD"** (HEAD desanexado), ou seja, 
 > [!WARNING]
 > Commits feitos em "detached HEAD" sem criar uma branch ficam "soltos" e podem ser perdidos quando você voltar para a `main`.
 
-## 2️⃣ `git reset`: voltar e tirar commits do histórico
-
-O `reset` move a branch atual para um commit anterior. Os commits que vieram depois **somem do histórico** da branch. O que acontece com as alterações desses commits depende da opção:
-
-| Opção | Os commits somem? | As alterações vão para... | Risco |
-| --- | --- | --- | --- |
-| `--soft` | Sim | **Staging area** (prontas para commitar de novo) | 🟢 Baixo |
-| `--mixed` (padrão) | Sim | **Working directory** (modificadas, mas fora do staging) | 🟢 Baixo |
-| `--hard` | Sim | **Lugar nenhum: são apagadas** | 🔴 Alto |
+## 2️⃣ `git reset <hash>`: voltar e tirar commits do histórico
 
 ```bash
-git reset --soft 9f8e7d6
-git reset 9f8e7d6          # igual a --mixed
-git reset --hard 9f8e7d6
+git reset 9f8e7d6
 ```
 
-> [!CAUTION]
-> `git reset --hard` **apaga** as alterações sem pedir confirmação. Use só quando tiver certeza absoluta.
+A branch volta para o commit indicado e os commits que vieram depois **saem do histórico**. Dependendo da opção (`--soft`, `--mixed` ou `--hard`), as alterações desses commits são mantidas ou **apagadas**.
 
 ## 3️⃣ `git revert <hash>`: desfazer de forma segura
 
@@ -58,17 +47,10 @@ git reset --hard 9f8e7d6
 git revert a1b2c3d
 ```
 
-Em vez de apagar o commit, o Git cria um **novo commit que faz o contrário** daquele. Se o commit original adicionou uma linha, o revert remove essa linha.
+Em vez de apagar, o Git cria um **novo commit que faz o contrário** daquele. O histórico fica intacto, por isso é a forma mais segura de desfazer algo que **já foi enviado** para o GitHub.
 
-```mermaid
-gitGraph
-    commit id: "A"
-    commit id: "B"
-    commit id: "C"
-    commit id: "C' (revert de C)" type: REVERSE
-```
-
-O histórico fica intacto e todo mundo consegue ver o que foi desfeito. Por isso, o `revert` é a forma **mais segura** de desfazer algo que **já foi enviado** para o GitHub.
+> [!TIP]
+> `reset` e `revert` são explicados em detalhes, com diagramas e os três modos do reset, na aula [4.6 Revert e reset](../04-git-avancado/06-revert-e-reset.md).
 
 ## 🧭 Qual usar?
 
@@ -84,9 +66,9 @@ O histórico fica intacto e todo mundo consegue ver o que foi desfeito. Por isso
 ## 📌 Resumindo
 
 - `checkout <hash>`: visita o passado sem alterar nada (detached HEAD).
-- `reset`: volta a branch e remove commits; `--soft` e `--mixed` mantêm as alterações, `--hard` apaga.
+- `reset`: volta a branch e remove commits do histórico.
 - `revert`: cria um commit que desfaz outro, preservando o histórico (ideal para o que já foi compartilhado).
-- Os detalhes de cada comando são aprofundados nas aulas [2.8](./08-desfazendo-acoes.md), [4.5](../04-git-avancado/05-desfazendo-com-checkout.md) e [4.6](../04-git-avancado/06-revert-e-reset.md).
+- Próximos passos: desfazer alterações em arquivos na [2.8](./08-desfazendo-acoes.md); `reset` e `revert` a fundo na [4.6](../04-git-avancado/06-revert-e-reset.md).
 
 ## 🏋️ Mão na massa
 
@@ -114,12 +96,16 @@ git switch main          # volta ao presente
 
 </details>
 
-**3.** Qual é a diferença entre `git reset --soft HEAD~1` e `git reset --hard HEAD~1`?
+**3.** Você visitou um commit antigo com `git checkout <hash>` e quer corrigir algo a partir dali, sem perder o trabalho. O que faz antes de commitar?
 
 <details>
 <summary>Ver resposta</summary>
 
-Os dois desfazem o último commit. O `--soft` **mantém** as alterações na staging area, prontas para um novo commit. O `--hard` **apaga** as alterações.
+Cria uma branch a partir daquele ponto, para os commits não ficarem "soltos" no detached HEAD:
+
+```bash
+git switch -c correcao-antiga
+```
 
 </details>
 

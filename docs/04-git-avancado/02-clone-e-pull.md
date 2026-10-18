@@ -12,24 +12,11 @@
 git clone https://github.com/usuario/repositorio.git
 ```
 
-O Git cria uma pasta com todos os arquivos, todas as branches e todo o histórico, e já configura o remoto `origin`.
+O Git cria uma pasta com todos os arquivos, todas as branches e todo o histórico, e já configura o remoto `origin`. (Mais opções do `clone` na aula [3.4](../03-git-intermediario/04-clone-e-push.md).)
 
 ## 🔄 Mantendo o projeto atualizado com `git pull`
 
-Enquanto você trabalha, outras pessoas podem estar enviando commits para o GitHub. O `git pull` traz essas novidades para a sua máquina.
-
-### O que o `pull` faz por baixo dos panos
-
-O `git pull` é a soma de dois comandos:
-
-1. **`git fetch`**: baixa os commits novos do remoto, **sem mudar** seus arquivos.
-2. **`git merge`**: junta esses commits na branch em que você está.
-
-```text
-git pull  =  git fetch  +  git merge
-```
-
-### Como usar
+Enquanto você trabalha, outras pessoas podem estar enviando commits para o GitHub. O `git pull` (que é um `fetch` + `merge`, como visto na aula [3.5](../03-git-intermediario/05-fetch-e-pull.md)) traz essas novidades para a sua máquina.
 
 ```bash
 # 1. Confira se você está na branch certa

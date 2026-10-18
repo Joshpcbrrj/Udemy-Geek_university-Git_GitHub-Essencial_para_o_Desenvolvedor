@@ -6,8 +6,6 @@
 
 ## 🔄 Os status de um arquivo
 
-<img src="./img/2.png" alt="Ciclo de vida dos status de arquivos no Git" width="600">
-
 Primeiro, o Git separa os arquivos em dois grandes grupos:
 
 - **Untracked (não rastreado):** arquivos que o Git **ainda não conhece**.
@@ -22,13 +20,18 @@ Primeiro, o Git separa os arquivos em dois grandes grupos:
 
 ### O ciclo, passo a passo
 
-```text
- Untracked ──git add──▶ Staged ──git commit──▶ Unmodified
-                          ▲                       │
-                          │                  (você edita)
-                       git add                    │
-                          │                       ▼
-                          └────────────────── Modified
+```mermaid
+stateDiagram-v2
+    direction LR
+    state "Untracked (não rastreado)" as U
+    state "Staged (preparado)" as S
+    state "Unmodified (salvo)" as N
+    state "Modified (modificado)" as M
+    [*] --> U: cria o arquivo
+    U --> S: git add
+    S --> N: git commit
+    N --> M: edita o arquivo
+    M --> S: git add
 ```
 
 1. Você cria um arquivo novo → ele está **untracked**.

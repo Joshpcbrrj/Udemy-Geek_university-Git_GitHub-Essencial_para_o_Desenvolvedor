@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Espaço reservado para a captura de tela do projeto">
+  <rect width="640" height="360" rx="16" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
+  <rect x="1" y="1" width="638" height="40" rx="16" fill="#d0d7de"/>
+  <rect x="1" y="25" width="638" height="16" fill="#d0d7de"/>
+  <circle cx="26" cy="21" r="7" fill="#ff5f57"/>
+  <circle cx="48" cy="21" r="7" fill="#febc2e"/>
+  <circle cx="70" cy="21" r="7" fill="#28c840"/>
+  <rect x="40" y="76" width="260" height="22" rx="11" fill="#8c959f"/>
+  <rect x="40" y="114" width="400" height="12" rx="6" fill="#d0d7de"/>
+  <rect x="40" y="136" width="340" height="12" rx="6" fill="#d0d7de"/>
+  <rect x="40" y="176" width="270" height="140" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+  <rect x="330" y="176" width="270" height="140" rx="10" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+  <text x="320" y="250" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#57606a">Coloque aqui uma captura de tela do seu projeto</text>
+</svg>

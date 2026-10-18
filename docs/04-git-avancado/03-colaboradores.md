@@ -13,10 +13,6 @@
 7. Clique em **Add ... to this repository** para enviar o convite.
 8. A pessoa recebe o convite por **e-mail** e nas **notificações** do GitHub. Ela precisa **aceitar** para virar colaboradora.
 
-### Print da tela de gerenciamento de acesso
-
-<img src="./img/1.png" alt="Tela de gerenciamento de colaboradores no GitHub" width="700">
-
 ## 🔐 E os níveis de permissão?
 
 Depende de quem é o dono do repositório:
