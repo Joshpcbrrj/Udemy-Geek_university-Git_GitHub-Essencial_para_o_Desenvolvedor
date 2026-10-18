@@ -24,7 +24,7 @@ edit autoexec.bat
 
 Alguns exemplos que motivariam as pessoas a
 utilizarem seu projeto ou que demonstrasse
-que este é últil para alguma coisa. Divida 
+que este é útil para alguma coisa. Divida 
 esta parte em partes menores e se possível 
 coloque algum código ou prints de telas.
 
@@ -58,6 +58,6 @@ Linux e Mac OS.
 
 Seu nome - [@SeuTwitter](https://twitter.com/seuTwitter) - seuemail@gmail.com
 
-Distribuído sobre a licença. Veja `LICENÇA` para mais informações.
+Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
-[https://github.com/seuusuaurio/seuprojeto](https://github.com/seusuario)
+[https://github.com/seuusuario/seuprojeto](https://github.com/seuusuario/seuprojeto)
