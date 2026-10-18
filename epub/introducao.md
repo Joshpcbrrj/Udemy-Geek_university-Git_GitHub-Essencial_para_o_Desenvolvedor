@@ -7,7 +7,7 @@ Este livro reúne as anotações do curso **Git e GitHub Essencial para o Desenv
 - **Começando do zero?** Leia os módulos na ordem.
 - Toda aula começa com um resumo **"Em uma frase"** e termina com **"Resumindo"** e exercícios **"🏋️ Mão na massa"**.
 - As **respostas dos exercícios** ficam no fim de cada aula. Tente resolver antes de olhar!
-- No final há um **apêndice** com o guia rápido de comandos e um glossário.
+- No final há dois **apêndices**: o guia rápido de comandos com glossário e um **simulado** com gabarito comentado.
 - Use a **busca** do seu leitor de e-books para encontrar um comando ou termo.
 
 ## Versão online

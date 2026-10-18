@@ -9,6 +9,7 @@ hide:
 **Resumo completo do curso da Geek University, escrito para quem está começando do zero.** Linguagem simples, analogias, diagramas, exercícios com respostas e alertas sobre os erros mais comuns.
 
 [Começar pela aula 1.1](01-introducao/01-controle-de-versao.md){ .md-button .md-button--primary }
+[:material-clipboard-check-outline: Fazer o simulado](simulado/index.md){ .md-button }
 [:material-book-open-variant: Baixar o EPUB](downloads/git-e-github-essencial.epub){ .md-button }
 [:material-lightning-bolt: Guia rápido de comandos](guia-rapido.md){ .md-button }
 
@@ -17,6 +18,7 @@ hide:
 - **Começando do zero?** Siga as aulas na ordem. No rodapé de cada página há links para a aula anterior e a próxima.
 - **Já sabe o básico?** Use o menu ou a **busca** (atalho ++s++ ou ++f++) para ir direto ao assunto.
 - **Precisa só lembrar um comando?** Vá para o [guia rápido](guia-rapido.md).
+- **Quer testar o que aprendeu?** Faça o [simulado](simulado/index.md), com nota automática e explicação de cada resposta.
 - **Prefere ler offline?** Baixe o [EPUB](downloads/git-e-github-essencial.epub) e abra em qualquer leitor de e-books (Apple Books, Google Play Livros, Calibre ou Kindle, pelo "Enviar para Kindle").
 
 Toda aula começa com um resumo **"Em uma frase"** e termina com **"Resumindo"** e exercícios **"🏋️ Mão na massa"**.

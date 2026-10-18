@@ -1,0 +1,1075 @@
+# Banco de perguntas do simulado.
+#
+# Cada pergunta tem:
+#   modulo:     número do módulo (1 a 8)
+#   aula:       caminho da aula dentro de docs/, usado no link "Revisar aula"
+#   pergunta:   enunciado (aceita `código` e **negrito**)
+#   opcoes:     4 alternativas
+#   resposta:   índice da alternativa correta (0 = primeira)
+#   explicacao: por que a resposta está certa
+#
+# Use aspas simples nos textos. Para escrever um apóstrofo dentro deles, use dois: ''.
+
+# ---------------------------------------------------------------- Módulo 1
+- modulo: 1
+  aula: 01-introducao/01-controle-de-versao.md
+  pergunta: 'Qual é a principal característica de um sistema de controle de versão **distribuído**?'
+  opcoes:
+    - 'Só o servidor guarda o histórico; cada pessoa tem apenas os arquivos atuais.'
+    - 'Cada pessoa tem uma cópia completa do projeto, incluindo todo o histórico.'
+    - 'Os arquivos ficam divididos entre vários servidores, um pedaço em cada.'
+    - 'Ele só funciona com conexão permanente à internet.'
+  resposta: 1
+  explicacao: 'No modelo distribuído (como o Git), cada cópia do repositório tem o histórico inteiro, o que permite trabalhar offline e restaurar o projeto a partir de qualquer cópia.'
+
+- modulo: 1
+  aula: 01-introducao/01-controle-de-versao.md
+  pergunta: 'Qual destes é um exemplo de sistema de controle de versão **centralizado**?'
+  opcoes:
+    - 'Git'
+    - 'Mercurial'
+    - 'GitHub'
+    - 'SVN (Subversion)'
+  resposta: 3
+  explicacao: 'SVN e CVS são centralizados. Git e Mercurial são distribuídos, e o GitHub nem é um sistema de controle de versão: é uma plataforma que hospeda repositórios Git.'
+
+- modulo: 1
+  aula: 01-introducao/02-o-que-e-git.md
+  pergunta: 'Quem criou o Git e em que ano?'
+  opcoes:
+    - 'Linus Torvalds, em 2005.'
+    - 'A Microsoft, em 2018.'
+    - 'Os fundadores do GitHub, em 2008.'
+    - 'Linus Torvalds, em 1991.'
+  resposta: 0
+  explicacao: 'Linus Torvalds criou o Git em 2005 para coordenar o desenvolvimento do kernel do Linux. Em 1991 ele criou o próprio Linux; a Microsoft comprou o GitHub em 2018.'
+
+- modulo: 1
+  aula: 01-introducao/02-o-que-e-git.md
+  pergunta: 'Por que quase todas as operações do Git são muito rápidas?'
+  opcoes:
+    - 'Porque o Git compacta os arquivos antes de enviá-los ao servidor.'
+    - 'Porque o GitHub tem servidores muito potentes.'
+    - 'Porque o histórico fica no seu computador, então as operações não dependem da rede.'
+    - 'Porque o Git só guarda o último commit.'
+  resposta: 2
+  explicacao: 'Como o Git é distribuído, commit, log, diff e a maioria dos comandos trabalham direto no seu disco, sem esperar por um servidor.'
+
+- modulo: 1
+  aula: 01-introducao/03-git-nao-e-github.md
+  pergunta: 'Qual afirmação descreve corretamente a relação entre Git e GitHub?'
+  opcoes:
+    - 'São nomes diferentes para a mesma ferramenta.'
+    - 'O Git é a ferramenta de controle de versão; o GitHub é uma plataforma online que hospeda repositórios Git.'
+    - 'O GitHub é a ferramenta instalada no computador; o Git é o site.'
+    - 'Para usar o Git é obrigatório ter uma conta no GitHub.'
+  resposta: 1
+  explicacao: 'O Git funciona sozinho no seu computador, sem conta em lugar nenhum. O GitHub é um dos serviços onde você pode hospedar esses repositórios para compartilhar e colaborar.'
+
+- modulo: 1
+  aula: 01-introducao/03-git-nao-e-github.md
+  pergunta: 'Qual destes recursos pertence ao **GitHub**, e não ao Git?'
+  opcoes:
+    - 'Commit'
+    - 'Branch'
+    - 'Pull request'
+    - 'Merge'
+  resposta: 2
+  explicacao: 'Commit, branch e merge são recursos do próprio Git. O pull request é uma funcionalidade da plataforma GitHub (no GitLab ele se chama merge request).'
+
+- modulo: 1
+  aula: 01-introducao/04-instalando-o-git.md
+  pergunta: 'Qual comando mostra se o Git está instalado e qual é a versão?'
+  opcoes:
+    - '`git --version`'
+    - '`git status`'
+    - '`git init`'
+    - '`git config --list`'
+  resposta: 0
+  explicacao: '`git --version` mostra algo como `git version 2.45.1`. Se aparecer um erro de comando não encontrado, o Git não está instalado.'
+
+- modulo: 1
+  aula: 01-introducao/04-instalando-o-git.md
+  pergunta: 'Para que serve configurar `user.name` e `user.email` no Git?'
+  opcoes:
+    - 'Para fazer login no GitHub pelo terminal.'
+    - 'Para criptografar os commits.'
+    - 'Para receber notificações por e-mail a cada commit.'
+    - 'Para assinar cada commit com seu nome e e-mail no histórico.'
+  resposta: 3
+  explicacao: 'Nome e e-mail ficam registrados em cada commit como autor. Eles não são uma credencial de login. Usar o mesmo e-mail da sua conta liga os commits ao seu perfil no GitHub.'
+
+- modulo: 1
+  aula: 01-introducao/05-usuarios-locais.md
+  pergunta: 'Você configurou um e-mail com `git config --global` e outro com `git config` (sem `--global`) dentro de um projeto. Qual e-mail será usado nos commits desse projeto?'
+  opcoes:
+    - 'O global, porque ele foi configurado primeiro.'
+    - 'O local, porque a configuração do repositório tem prioridade sobre a global.'
+    - 'Os dois, separados por vírgula.'
+    - 'Nenhum: o Git mostra um erro por haver conflito.'
+  resposta: 1
+  explicacao: 'A configuração local (salva em `.git/config`) sempre vence a global. Isso permite usar uma conta pessoal como padrão e outra só nos projetos do trabalho.'
+
+- modulo: 1
+  aula: 01-introducao/05-usuarios-locais.md
+  pergunta: 'Ao fazer `git push` pelo terminal, o GitHub pede autenticação. O que **não** funciona mais?'
+  opcoes:
+    - 'Digitar a senha da sua conta do GitHub.'
+    - 'Usar um Personal Access Token no lugar da senha.'
+    - 'Usar uma chave SSH.'
+    - 'Fazer login pelo navegador com o Git Credential Manager.'
+  resposta: 0
+  explicacao: 'Desde 2021 o GitHub não aceita a senha da conta em operações pelo terminal. É preciso usar token, SSH ou o login pelo navegador.'
+
+# ---------------------------------------------------------------- Módulo 2
+- modulo: 2
+  aula: 02-git-basico/01-como-o-git-funciona.md
+  pergunta: 'O que o comando `git init` faz?'
+  opcoes:
+    - 'Baixa um repositório do GitHub.'
+    - 'Cria o primeiro commit do projeto.'
+    - 'Transforma a pasta atual em um repositório, criando a pasta oculta `.git`.'
+    - 'Instala o Git no computador.'
+  resposta: 2
+  explicacao: '`git init` cria a pasta `.git`, onde o Git guarda todo o histórico. Para baixar um repositório existente, o comando é `git clone`.'
+
+- modulo: 2
+  aula: 02-git-basico/01-como-o-git-funciona.md
+  pergunta: 'Depois de rodar `git add arquivo.txt`, onde ficam as alterações desse arquivo?'
+  opcoes:
+    - 'No repositório remoto.'
+    - 'Na staging area (área de preparação).'
+    - 'Em um novo commit.'
+    - 'Na lixeira do sistema.'
+  resposta: 1
+  explicacao: 'O `git add` coloca as alterações na staging area, a "sala de espera" do próximo commit. Elas só entram no histórico com o `git commit`.'
+
+- modulo: 2
+  aula: 02-git-basico/01-como-o-git-funciona.md
+  pergunta: 'Quando você faz um commit, o que o Git faz com os arquivos que **não mudaram** desde o commit anterior?'
+  opcoes:
+    - 'Guarda uma cópia nova de cada um deles.'
+    - 'Apaga esses arquivos do histórico.'
+    - 'Deixa esses arquivos de fora do commit para sempre.'
+    - 'Não copia de novo: o commit aponta para a versão que já estava guardada.'
+  resposta: 3
+  explicacao: 'O commit é uma "foto" do projeto inteiro, mas o Git reaproveita o conteúdo que não mudou. Por isso o histórico ocupa pouco espaço.'
+
+- modulo: 2
+  aula: 02-git-basico/02-ciclo-de-vida-dos-arquivos.md
+  pergunta: 'Você acabou de criar um arquivo novo na pasta do projeto e ainda não rodou nenhum comando. Em qual status ele está?'
+  opcoes:
+    - 'Untracked (não rastreado)'
+    - 'Staged (preparado)'
+    - 'Modified (modificado)'
+    - 'Unmodified (não modificado)'
+  resposta: 0
+  explicacao: 'Arquivos novos começam como untracked: o Git vê que eles existem, mas não guarda o histórico deles até você usar `git add`.'
+
+- modulo: 2
+  aula: 02-git-basico/02-ciclo-de-vida-dos-arquivos.md
+  pergunta: 'Um arquivo que já estava no último commit foi editado, mas você ainda não rodou `git add`. Qual é o status dele?'
+  opcoes:
+    - 'Untracked'
+    - 'Staged'
+    - 'Modified'
+    - 'Committed'
+  resposta: 2
+  explicacao: 'Arquivo rastreado e alterado depois do último commit, mas ainda fora do staging, fica com o status modified.'
+
+- modulo: 2
+  aula: 02-git-basico/02-ciclo-de-vida-dos-arquivos.md
+  pergunta: 'Qual comando mostra o status de cada arquivo e costuma sugerir o próximo passo?'
+  opcoes:
+    - '`git log`'
+    - '`git status`'
+    - '`git diff --stat`'
+    - '`git show`'
+  resposta: 1
+  explicacao: '`git status` lista os arquivos untracked, modificados e preparados, e quase sempre mostra qual comando usar em seguida.'
+
+- modulo: 2
+  aula: 02-git-basico/03-gitignore.md
+  pergunta: 'O que a linha `*.log` em um arquivo `.gitignore` faz?'
+  opcoes:
+    - 'Ignora só o arquivo chamado `*.log`.'
+    - 'Apaga todos os arquivos `.log` do projeto.'
+    - 'Versiona apenas os arquivos `.log`.'
+    - 'Faz o Git ignorar todos os arquivos que terminam com `.log`.'
+  resposta: 3
+  explicacao: 'O `*` significa "qualquer coisa". Os arquivos `.log` continuam na pasta, mas o Git deixa de mostrá-los no status e não os inclui em `git add .`.'
+
+- modulo: 2
+  aula: 02-git-basico/03-gitignore.md
+  pergunta: 'Você já tinha feito commit do arquivo `senha.env` e depois o colocou no `.gitignore`. O que acontece?'
+  opcoes:
+    - 'O Git continua rastreando o arquivo; é preciso rodar `git rm --cached senha.env`.'
+    - 'O arquivo é removido automaticamente do histórico.'
+    - 'O arquivo é apagado do computador.'
+    - 'O Git mostra um erro e não aceita mais commits.'
+  resposta: 0
+  explicacao: 'O `.gitignore` só vale para arquivos ainda não rastreados. `git rm --cached` para de rastrear sem apagar do disco. Se o commit já foi enviado, troque a senha, porque ela continua no histórico.'
+
+- modulo: 2
+  aula: 02-git-basico/04-commits.md
+  pergunta: 'Você criou um arquivo **novo** e rodou `git commit -am "Adiciona arquivo"`. O que acontece com esse arquivo?'
+  opcoes:
+    - 'Ele entra no commit normalmente.'
+    - 'Ele não entra no commit, porque o `-a` só inclui arquivos já rastreados.'
+    - 'O Git apaga o arquivo.'
+    - 'O commit falha e nada é registrado.'
+  resposta: 1
+  explicacao: 'A opção `-a` faz `git add` automaticamente só de arquivos que o Git já acompanha. Arquivos novos precisam de `git add` antes.'
+
+- modulo: 2
+  aula: 02-git-basico/04-commits.md
+  pergunta: 'Qual destas é a melhor mensagem de commit?'
+  opcoes:
+    - '`update`'
+    - '`arrumei umas coisas`'
+    - '`Corrige cálculo de frete para a região Norte`'
+    - '`aaaa`'
+  resposta: 2
+  explicacao: 'Uma boa mensagem é curta, específica e diz o que a alteração faz. Mensagens genéricas não ajudam ninguém a entender o histórico depois.'
+
+- modulo: 2
+  aula: 02-git-basico/05-historico-do-projeto.md
+  pergunta: 'Qual comando mostra os commits de forma resumida, um por linha?'
+  opcoes:
+    - '`git log --oneline`'
+    - '`git log --stat`'
+    - '`git status --short`'
+    - '`git show --all`'
+  resposta: 0
+  explicacao: '`git log --oneline` mostra o hash curto e a mensagem de cada commit em uma única linha. É a forma mais prática de ter uma visão geral.'
+
+- modulo: 2
+  aula: 02-git-basico/05-historico-do-projeto.md
+  pergunta: 'Como listar os commits cuja **mensagem** contém a palavra "login"?'
+  opcoes:
+    - '`git log --author="login"`'
+    - '`git log --since="login"`'
+    - '`git search login`'
+    - '`git log --grep="login"`'
+  resposta: 3
+  explicacao: '`--grep` filtra pela mensagem do commit. `--author` filtra pelo autor e `--since` por data.'
+
+- modulo: 2
+  aula: 02-git-basico/06-voltando-no-tempo.md
+  pergunta: 'O que acontece quando você roda `git checkout <hash>` de um commit antigo?'
+  opcoes:
+    - 'Os commits mais novos são apagados.'
+    - 'O commit antigo é desfeito.'
+    - 'Os arquivos voltam a ficar como naquele commit, em modo "detached HEAD", sem apagar nada.'
+    - 'Uma nova branch é criada automaticamente.'
+  resposta: 2
+  explicacao: 'O checkout de um hash só muda o que você está vendo. Para voltar ao presente, use `git switch main`; para trabalhar a partir dali, crie uma branch com `git switch -c`.'
+
+- modulo: 2
+  aula: 02-git-basico/07-comandos-uteis.md
+  pergunta: 'O que o comando `git diff`, sem opções, mostra?'
+  opcoes:
+    - 'As alterações que ainda **não** foram para a staging area.'
+    - 'As alterações que vão entrar no próximo commit.'
+    - 'As diferenças entre o seu repositório e o GitHub.'
+    - 'A lista de arquivos ignorados.'
+  resposta: 0
+  explicacao: '`git diff` compara o working directory com a staging area. Para ver o que já está preparado, use `git diff --staged`.'
+
+- modulo: 2
+  aula: 02-git-basico/07-comandos-uteis.md
+  pergunta: 'Como parar de rastrear um arquivo **sem** apagá-lo do seu computador?'
+  opcoes:
+    - '`git rm arquivo`'
+    - '`git rm --cached arquivo`'
+    - '`git restore arquivo`'
+    - '`git mv arquivo`'
+  resposta: 1
+  explicacao: '`git rm --cached` tira o arquivo do controle do Git e mantém o arquivo no disco. Sem `--cached`, o `git rm` também apaga o arquivo da pasta.'
+
+- modulo: 2
+  aula: 02-git-basico/08-desfazendo-acoes.md
+  pergunta: 'Você deu `git add` em um arquivo por engano. Como tirá-lo da staging area **mantendo** as alterações?'
+  opcoes:
+    - '`git restore arquivo`'
+    - '`git reset --hard`'
+    - '`git rm arquivo`'
+    - '`git restore --staged arquivo`'
+  resposta: 3
+  explicacao: '`git restore --staged` só tira o arquivo do staging. Sem `--staged`, o `git restore` descartaria as alterações.'
+
+- modulo: 2
+  aula: 02-git-basico/08-desfazendo-acoes.md
+  pergunta: 'Você fez um commit (ainda não enviado) e esqueceu de incluir um arquivo. Qual é a forma mais limpa de colocá-lo no mesmo commit?'
+  opcoes:
+    - 'Fazer outro commit só com o arquivo esquecido.'
+    - '`git add arquivo` seguido de `git commit --amend --no-edit`.'
+    - '`git revert HEAD` e depois commitar tudo de novo.'
+    - '`git push --force` com o arquivo.'
+  resposta: 1
+  explicacao: 'O `--amend` substitui o último commit por um novo que inclui o que está no staging. Como reescreve o histórico, use só em commits que ainda não foram enviados.'
+
+- modulo: 2
+  aula: 02-git-basico/08-desfazendo-acoes.md
+  pergunta: 'O que o comando `git rebase -i HEAD~3` permite fazer?'
+  opcoes:
+    - 'Editar, juntar (squash), reordenar ou remover os 3 últimos commits.'
+    - 'Desfazer os 3 últimos commits e apagar as alterações.'
+    - 'Enviar os 3 últimos commits para o GitHub.'
+    - 'Criar 3 branches novas.'
+  resposta: 0
+  explicacao: 'O rebase interativo abre a lista dos commits no editor. Trocando `pick` por `squash`, `reword` ou `drop`, você edita o histórico recente.'
+
+# ---------------------------------------------------------------- Módulo 3
+- modulo: 3
+  aula: 03-git-intermediario/01-branches.md
+  pergunta: 'Tecnicamente, o que é uma branch no Git?'
+  opcoes:
+    - 'Uma cópia completa de todos os arquivos do projeto.'
+    - 'Um repositório separado.'
+    - 'Uma pasta especial dentro do projeto.'
+    - 'Um ponteiro (etiqueta) que aponta para um commit e avança a cada novo commit.'
+  resposta: 3
+  explicacao: 'Por isso criar branches é instantâneo e leve: o Git só cria uma etiqueta apontando para o commit atual.'
+
+- modulo: 3
+  aula: 03-git-intermediario/01-branches.md
+  pergunta: 'Qual comando cria uma branch nova **e** já troca para ela?'
+  opcoes:
+    - '`git branch nova`'
+    - '`git switch -c nova`'
+    - '`git merge nova`'
+    - '`git checkout nova`'
+  resposta: 1
+  explicacao: '`git switch -c nova` (ou o tradicional `git checkout -b nova`) cria e troca. `git branch nova` só cria, e `git checkout nova` só troca para uma branch que já existe.'
+
+- modulo: 3
+  aula: 03-git-intermediario/01-branches.md
+  pergunta: 'O que acontece ao rodar `git branch -d feature` se essa branch tem commits que ainda não foram mesclados?'
+  opcoes:
+    - 'O Git recusa a exclusão; para forçar seria preciso usar `-D`.'
+    - 'A branch é apagada junto com os commits.'
+    - 'Os commits são mesclados automaticamente na main.'
+    - 'A branch é renomeada para `feature-old`.'
+  resposta: 0
+  explicacao: 'O `-d` é a forma segura: só apaga branches já mescladas, para você não perder trabalho. O `-D` força a exclusão.'
+
+- modulo: 3
+  aula: 03-git-intermediario/02-merge.md
+  pergunta: 'Você quer trazer as alterações da branch `feature` para a `main`. O que faz?'
+  opcoes:
+    - 'Fica na `feature` e roda `git merge main`.'
+    - 'Roda `git merge feature main` de qualquer branch.'
+    - 'Vai para a `main` (`git switch main`) e roda `git merge feature`.'
+    - 'Roda `git push feature main`.'
+  resposta: 2
+  explicacao: 'O merge sempre traz as alterações para a branch em que você está. Por isso, primeiro você vai para a branch que vai receber o trabalho.'
+
+- modulo: 3
+  aula: 03-git-intermediario/02-merge.md
+  pergunta: 'Quando um merge é do tipo **fast-forward**?'
+  opcoes:
+    - 'Quando há conflitos que o Git resolve sozinho.'
+    - 'Quando a branch de destino não recebeu commits novos desde que a outra branch foi criada.'
+    - 'Quando as duas branches têm commits novos.'
+    - 'Quando o merge é feito pelo GitHub.'
+  resposta: 1
+  explicacao: 'Nesse caso o Git só avança o ponteiro da branch de destino, sem criar commit de merge. Se as duas branches tiverem commits novos, o merge é de três vias.'
+
+- modulo: 3
+  aula: 03-git-intermediario/02-merge.md
+  pergunta: 'Qual é a característica de um commit de merge (merge de três vias)?'
+  opcoes:
+    - 'Ele não tem mensagem.'
+    - 'Ele apaga a branch que foi mesclada.'
+    - 'Ele só pode ser criado no GitHub.'
+    - 'Ele tem dois "pais": o último commit de cada branch.'
+  resposta: 3
+  explicacao: 'O commit de merge junta as duas linhas de desenvolvimento, por isso aponta para dois commits anteriores.'
+
+- modulo: 3
+  aula: 03-git-intermediario/02-merge.md
+  pergunta: 'Para que serve `git merge --abort`?'
+  opcoes:
+    - 'Para cancelar um merge em andamento (com conflito) e voltar como estava antes.'
+    - 'Para desfazer um merge que foi concluído há uma semana.'
+    - 'Para apagar a branch que causou o conflito.'
+    - 'Para aceitar automaticamente a versão da outra branch.'
+  resposta: 0
+  explicacao: 'O `--abort` só funciona durante um merge que parou com conflito. Para desfazer um merge já concluído, use `git reset` (se não enviou) ou `git revert` (se já enviou).'
+
+- modulo: 3
+  aula: 03-git-intermediario/02-merge.md
+  pergunta: 'O que o comando `git cherry-pick <hash>` faz?'
+  opcoes:
+    - 'Apaga o commit indicado.'
+    - 'Mostra os detalhes do commit.'
+    - 'Copia aquele commit específico para a branch atual.'
+    - 'Cria uma tag no commit.'
+  resposta: 2
+  explicacao: 'O cherry-pick ("colher a cereja") traz um único commit de outra branch, sem precisar mesclar a branch inteira.'
+
+- modulo: 3
+  aula: 03-git-intermediario/03-rebase.md
+  pergunta: 'O que o `git rebase main` faz quando você está na branch `feature`?'
+  opcoes:
+    - 'Junta a `main` na `feature` criando um commit de merge.'
+    - 'Reaplica os commits da `feature` no topo da `main`, deixando o histórico linear.'
+    - 'Apaga a `main` e renomeia a `feature`.'
+    - 'Envia a `feature` para o GitHub.'
+  resposta: 1
+  explicacao: 'O rebase "recorta" seus commits e os "cola" depois do último commit da `main`. Os commits reaplicados são novos, com hashes diferentes.'
+
+- modulo: 3
+  aula: 03-git-intermediario/03-rebase.md
+  pergunta: 'Qual é a "regra de ouro" do rebase?'
+  opcoes:
+    - 'Sempre fazer rebase antes de cada commit.'
+    - 'Só fazer rebase pelo site do GitHub.'
+    - 'Usar rebase no lugar de todos os merges.'
+    - 'Nunca fazer rebase em commits que já foram enviados e que outras pessoas podem estar usando.'
+  resposta: 3
+  explicacao: 'Como o rebase cria commits novos e descarta os antigos, reescrever commits compartilhados deixa o histórico de quem já os baixou inconsistente com o remoto.'
+
+- modulo: 3
+  aula: 03-git-intermediario/03-rebase.md
+  pergunta: 'Durante um rebase você resolveu um conflito e rodou `git add`. Qual é o próximo comando?'
+  opcoes:
+    - '`git rebase --continue`'
+    - '`git commit`'
+    - '`git merge --continue`'
+    - '`git push`'
+  resposta: 0
+  explicacao: 'No rebase, o processo segue com `git rebase --continue` (ou é cancelado com `git rebase --abort`). Não se usa `git commit` para concluir.'
+
+- modulo: 3
+  aula: 03-git-intermediario/04-clone-e-push.md
+  pergunta: 'O que o `git clone` configura automaticamente?'
+  opcoes:
+    - 'Uma chave SSH.'
+    - 'Uma tag com a versão atual.'
+    - 'Um remoto chamado `origin`, apontando para o repositório de onde você clonou.'
+    - 'Uma branch chamada `clone`.'
+  resposta: 2
+  explicacao: 'Além de baixar arquivos e histórico, o clone já deixa o remoto `origin` configurado, pronto para `git pull` e `git push`.'
+
+- modulo: 3
+  aula: 03-git-intermediario/04-clone-e-push.md
+  pergunta: 'Para que serve o `-u` em `git push -u origin minha-branch`?'
+  opcoes:
+    - 'Para enviar só os arquivos atualizados.'
+    - 'Para criar a branch no remoto e ligá-la à branch local, permitindo usar só `git push` depois.'
+    - 'Para desfazer o último push.'
+    - 'Para enviar todas as branches de uma vez.'
+  resposta: 1
+  explicacao: 'O `-u` (`--set-upstream`) liga a branch local à remota. A partir daí, `git push` e `git pull` sabem para onde enviar e de onde trazer.'
+
+- modulo: 3
+  aula: 03-git-intermediario/05-fetch-e-pull.md
+  pergunta: 'Qual é a diferença entre `git fetch` e `git pull`?'
+  opcoes:
+    - 'O `fetch` baixa os commits novos sem alterar sua branch; o `pull` baixa e já junta na branch atual.'
+    - 'O `fetch` envia commits; o `pull` recebe.'
+    - 'São equivalentes, só mudam de nome.'
+    - 'O `pull` baixa sem alterar nada; o `fetch` faz merge.'
+  resposta: 0
+  explicacao: '`git pull` = `git fetch` + `git merge`. O `fetch` é o jeito cuidadoso de ver o que chegou antes de misturar com o seu trabalho.'
+
+- modulo: 3
+  aula: 03-git-intermediario/06-bare-repository.md
+  pergunta: 'O que é um repositório **bare**?'
+  opcoes:
+    - 'Um repositório sem nenhum commit.'
+    - 'Um repositório privado no GitHub.'
+    - 'Um repositório com arquivos, mas sem histórico.'
+    - 'Um repositório só com o histórico, sem arquivos de trabalho, usado como servidor central.'
+  resposta: 3
+  explicacao: 'Sem arquivos de trabalho, ninguém edita nada dentro dele, então ele pode receber pushes com segurança. É criado com `git init --bare nome.git`.'
+
+- modulo: 3
+  aula: 03-git-intermediario/07-tags.md
+  pergunta: 'Você criou a tag `v1.0.0` e rodou `git push`. A tag aparece no GitHub?'
+  opcoes:
+    - 'Sim, o push sempre envia as tags.'
+    - 'Não: o push comum não envia tags; é preciso `git push origin v1.0.0` ou `git push origin --tags`.'
+    - 'Só se a tag for anotada.'
+    - 'Só depois de 24 horas.'
+  resposta: 1
+  explicacao: 'As tags precisam ser enviadas explicitamente, uma por vez ou todas com `--tags`.'
+
+- modulo: 3
+  aula: 03-git-intermediario/07-tags.md
+  pergunta: 'Qual é a principal diferença entre uma tag e uma branch?'
+  opcoes:
+    - 'A tag guarda arquivos; a branch guarda commits.'
+    - 'A tag só existe no GitHub.'
+    - 'A tag fica parada no mesmo commit para sempre; a branch avança a cada novo commit.'
+    - 'Não há diferença.'
+  resposta: 2
+  explicacao: 'Por isso as tags são usadas para marcar versões (como `v1.0.0`), enquanto as branches são linhas de trabalho em andamento.'
+
+# ---------------------------------------------------------------- Módulo 4
+- modulo: 4
+  aula: 04-git-avancado/01-repositorio-remoto.md
+  pergunta: 'Você criou um projeto com `git init` e um repositório vazio no GitHub. Qual comando conecta os dois?'
+  opcoes:
+    - '`git clone origin <url>`'
+    - '`git push <url>`'
+    - '`git remote add origin <url>`'
+    - '`git connect <url>`'
+  resposta: 2
+  explicacao: '`git remote add origin <url>` cria o remoto chamado `origin`. Depois, o primeiro envio é feito com `git push -u origin main`.'
+
+- modulo: 4
+  aula: 04-git-avancado/01-repositorio-remoto.md
+  pergunta: 'O que acontece ao rodar `git remote remove origin`?'
+  opcoes:
+    - 'O repositório é apagado do GitHub.'
+    - 'Só a ligação com o remoto é removida do seu computador; nada muda no GitHub.'
+    - 'Todos os commits locais são apagados.'
+    - 'A branch `origin` é excluída.'
+  resposta: 1
+  explicacao: 'O comando só apaga a configuração local do remoto. O repositório no GitHub continua intacto.'
+
+- modulo: 4
+  aula: 04-git-avancado/01-repositorio-remoto.md
+  pergunta: 'Qual comando lista os remotos configurados e suas URLs?'
+  opcoes:
+    - '`git remote -v`'
+    - '`git branch -a`'
+    - '`git status --remote`'
+    - '`git config origin`'
+  resposta: 0
+  explicacao: '`git remote -v` mostra cada remoto com a URL usada para `fetch` e para `push`.'
+
+- modulo: 4
+  aula: 04-git-avancado/02-clone-e-pull.md
+  pergunta: 'Você está na branch `feature` e roda `git pull origin main`. O que acontece?'
+  opcoes:
+    - 'A `main` local é atualizada, e a `feature` fica como estava.'
+    - 'Nada, porque é preciso estar na `main`.'
+    - 'A `feature` é enviada para a `main` do GitHub.'
+    - 'A `main` do remoto é trazida e mesclada na `feature`, a branch atual.'
+  resposta: 3
+  explicacao: 'O pull sempre junta na branch em que você está. Por isso é importante conferir a branch atual antes de rodar o comando.'
+
+- modulo: 4
+  aula: 04-git-avancado/02-clone-e-pull.md
+  pergunta: 'Por que é recomendado rodar `git pull` antes de `git push`?'
+  opcoes:
+    - 'Para trazer commits que outras pessoas enviaram e evitar que o push seja rejeitado.'
+    - 'Porque o push não funciona sem um pull logo antes.'
+    - 'Para apagar os commits antigos do remoto.'
+    - 'Para criar uma cópia de segurança local.'
+  resposta: 0
+  explicacao: 'Se o remoto tem commits que você não tem, o GitHub recusa o push. Atualizar antes evita o erro e conflitos maiores.'
+
+- modulo: 4
+  aula: 04-git-avancado/03-colaboradores.md
+  pergunta: 'Em um repositório da sua **conta pessoal**, que acesso recebe uma pessoa convidada como colaboradora?'
+  opcoes:
+    - 'Só leitura.'
+    - 'Acesso de escrita: pode criar branches e fazer push.'
+    - 'Você escolhe entre Read, Triage, Write, Maintain e Admin.'
+    - 'Acesso total, inclusive para apagar o repositório.'
+  resposta: 1
+  explicacao: 'Em repositórios pessoais, todo colaborador tem acesso de escrita. A escolha de papéis (Read, Triage, Write...) existe em repositórios de organizações.'
+
+- modulo: 4
+  aula: 04-git-avancado/03-colaboradores.md
+  pergunta: 'Uma pessoa desconhecida quer contribuir com o seu projeto open source. Qual é o caminho recomendado?'
+  opcoes:
+    - 'Adicioná-la como colaboradora.'
+    - 'Enviar a ela a sua senha do GitHub.'
+    - 'Pedir que ela faça um fork e envie um pull request.'
+    - 'Deixar o repositório sem proteção na `main`.'
+  resposta: 2
+  explicacao: 'Com fork + pull request, você revisa cada alteração antes que ela entre no projeto, sem dar acesso de escrita a ninguém.'
+
+- modulo: 4
+  aula: 04-git-avancado/04-historico-de-commits.md
+  pergunta: 'O que o comando `git blame arquivo.txt` mostra?'
+  opcoes:
+    - 'Quem alterou cada linha do arquivo por último e em qual commit.'
+    - 'Os erros de sintaxe do arquivo.'
+    - 'Quantas vezes o arquivo foi aberto.'
+    - 'As linhas que causaram conflito.'
+  resposta: 0
+  explicacao: 'Apesar do nome ("culpar"), o `blame` serve para entender o contexto de cada linha: autor, data e commit da última alteração.'
+
+- modulo: 4
+  aula: 04-git-avancado/04-historico-de-commits.md
+  pergunta: 'Como ver apenas os commits que alteraram um arquivo específico?'
+  opcoes:
+    - '`git show arquivo.txt`'
+    - '`git status arquivo.txt`'
+    - '`git diff arquivo.txt`'
+    - '`git log --oneline -- arquivo.txt`'
+  resposta: 3
+  explicacao: 'O `--` seguido do caminho limita o `git log` aos commits que mexeram naquele arquivo.'
+
+- modulo: 4
+  aula: 04-git-avancado/05-desfazendo-com-checkout.md
+  pergunta: 'Qual é o equivalente moderno de `git checkout -- arquivo.txt`?'
+  opcoes:
+    - '`git switch arquivo.txt`'
+    - '`git restore arquivo.txt`'
+    - '`git reset arquivo.txt`'
+    - '`git revert arquivo.txt`'
+  resposta: 1
+  explicacao: 'Os dois descartam as alterações não preparadas do arquivo. O Git criou o `restore` (arquivos) e o `switch` (branches) para separar as funções do antigo `checkout`.'
+
+- modulo: 4
+  aula: 04-git-avancado/06-revert-e-reset.md
+  pergunta: 'O que o `git revert <hash>` faz?'
+  opcoes:
+    - 'Apaga o commit do histórico.'
+    - 'Volta todos os arquivos para aquele commit.'
+    - 'Cria um novo commit que desfaz as alterações do commit indicado, preservando o histórico.'
+    - 'Envia o commit de volta para o autor.'
+  resposta: 2
+  explicacao: 'Como nada é apagado, o revert é a forma segura de desfazer algo que já foi enviado e compartilhado.'
+
+- modulo: 4
+  aula: 04-git-avancado/06-revert-e-reset.md
+  pergunta: 'Depois de `git reset --soft HEAD~1`, onde ficam as alterações do commit desfeito?'
+  opcoes:
+    - 'Na staging area, prontas para um novo commit.'
+    - 'Nos arquivos, mas fora do staging.'
+    - 'São apagadas.'
+    - 'No repositório remoto.'
+  resposta: 0
+  explicacao: '`--soft` devolve as alterações ao staging; `--mixed` (o padrão) devolve aos arquivos, fora do staging; `--hard` apaga.'
+
+- modulo: 4
+  aula: 04-git-avancado/06-revert-e-reset.md
+  pergunta: 'Qual modo do `git reset` **apaga** as alterações dos commits desfeitos e também as alterações não commitadas?'
+  opcoes:
+    - '`--soft`'
+    - '`--mixed`'
+    - '`--keep`'
+    - '`--hard`'
+  resposta: 3
+  explicacao: 'O `--hard` deixa o projeto idêntico ao commit indicado, descartando tudo o que não foi commitado. Use com muito cuidado.'
+
+- modulo: 4
+  aula: 04-git-avancado/06-revert-e-reset.md
+  pergunta: 'Você rodou `git reset --hard` e perdeu um commit de que precisava. Qual comando ajuda a encontrá-lo?'
+  opcoes:
+    - '`git log --all`'
+    - '`git reflog`'
+    - '`git status`'
+    - '`git fsck --delete`'
+  resposta: 1
+  explicacao: 'O `git reflog` registra tudo por onde o HEAD passou. Com o hash em mãos, `git reset --hard <hash>` traz o commit de volta.'
+
+- modulo: 4
+  aula: 04-git-avancado/07-conflitos.md
+  pergunta: 'Em um conflito, o que o trecho entre `<<<<<<< HEAD` e `=======` representa?'
+  opcoes:
+    - 'A sua versão, da branch em que você está.'
+    - 'A versão que está chegando da outra branch.'
+    - 'O código que o Git já mesclou sozinho.'
+    - 'Um comentário automático do Git.'
+  resposta: 0
+  explicacao: 'Entre `<<<<<<< HEAD` e `=======` fica a sua versão; entre `=======` e `>>>>>>>` fica a versão que está chegando. Você escolhe o resultado final e apaga os marcadores.'
+
+- modulo: 4
+  aula: 04-git-avancado/07-conflitos.md
+  pergunta: 'Você resolveu todos os conflitos de um **merge** e salvou os arquivos. O que falta fazer?'
+  opcoes:
+    - 'Rodar `git merge --abort`.'
+    - 'Nada: o Git conclui sozinho ao salvar.'
+    - 'Rodar `git add` nos arquivos resolvidos e depois `git commit`.'
+    - 'Rodar `git rebase --continue`.'
+  resposta: 2
+  explicacao: 'O `git add` marca o conflito como resolvido e o `git commit` finaliza o merge. O `--continue` é usado no rebase.'
+
+# ---------------------------------------------------------------- Módulo 5
+- modulo: 5
+  aula: 05-open-source/01-issues.md
+  pergunta: 'Para que servem as issues no GitHub?'
+  opcoes:
+    - 'Para guardar senhas do projeto.'
+    - 'Para relatar bugs, sugerir melhorias, discutir ideias e organizar tarefas.'
+    - 'Para fazer backup dos commits.'
+    - 'Para hospedar o site do projeto.'
+  resposta: 1
+  explicacao: 'Issues funcionam como tickets: cada uma tem número, status (aberta ou fechada), comentários, labels e responsáveis.'
+
+- modulo: 5
+  aula: 05-open-source/01-issues.md
+  pergunta: 'Qual mensagem de commit fecha automaticamente a issue número 12?'
+  opcoes:
+    - '`Issue 12 resolvida`'
+    - '`#12`'
+    - '`Corrige validação do formulário. Closes #12`'
+    - '`Fecha a doze`'
+  resposta: 2
+  explicacao: 'Palavras-chave como `close`, `fix` e `resolve` (e variações) seguidas de `#número` fecham a issue. Só `#12` apenas menciona a issue, sem fechá-la.'
+
+- modulo: 5
+  aula: 05-open-source/01-issues.md
+  pergunta: 'Quando a issue é fechada por uma palavra-chave no commit?'
+  opcoes:
+    - 'Assim que o commit é criado no seu computador.'
+    - 'Quando o commit chega à branch padrão do repositório (normalmente a `main`).'
+    - 'Quando alguém lê a issue.'
+    - 'Depois de uma aprovação manual obrigatória.'
+  resposta: 1
+  explicacao: 'Se o commit for para outra branch, a issue fecha quando essa branch for mesclada na branch padrão, por exemplo via pull request.'
+
+- modulo: 5
+  aula: 05-open-source/02-fork.md
+  pergunta: 'O que é um fork?'
+  opcoes:
+    - 'Uma cópia de um repositório de outra pessoa dentro da sua conta do GitHub.'
+    - 'Um comando do Git para dividir uma branch em duas.'
+    - 'Uma cópia local do repositório no seu computador.'
+    - 'Uma permissão de administrador.'
+  resposta: 0
+  explicacao: 'O fork acontece no GitHub (não é um comando do Git). A cópia local é feita depois, com `git clone` do seu fork.'
+
+- modulo: 5
+  aula: 05-open-source/02-fork.md
+  pergunta: 'Em um fork, o que costuma ser chamado de `upstream`?'
+  opcoes:
+    - 'O seu fork no GitHub.'
+    - 'A branch principal do seu computador.'
+    - 'O repositório original, de onde você fez o fork.'
+    - 'Qualquer repositório público.'
+  resposta: 2
+  explicacao: '`origin` é o seu fork, onde você tem permissão de push. `upstream` é o original, de onde você busca as novidades.'
+
+- modulo: 5
+  aula: 05-open-source/02-fork.md
+  pergunta: 'Como atualizar a `main` local do seu fork com as novidades do repositório original?'
+  opcoes:
+    - '`git push upstream main`'
+    - '`git clone upstream`'
+    - '`git reset --hard origin/main`'
+    - '`git fetch upstream` e depois `git merge upstream/main`'
+  resposta: 3
+  explicacao: 'O `fetch` baixa as novidades do original e o `merge` as junta na sua `main`. Depois, `git push origin main` atualiza o fork no GitHub.'
+
+- modulo: 5
+  aula: 05-open-source/03-pull-requests.md
+  pergunta: 'O que é um pull request?'
+  opcoes:
+    - 'Um comando para baixar commits do GitHub.'
+    - 'Um pedido para que as alterações de uma branch sejam revisadas e incorporadas ao projeto.'
+    - 'Uma cópia de segurança automática.'
+    - 'Um tipo de issue para relatar bugs.'
+  resposta: 1
+  explicacao: 'O PR é um espaço de conversa e revisão: as pessoas comentam, testes rodam e, no fim, alguém com permissão faz o merge.'
+
+- modulo: 5
+  aula: 05-open-source/03-pull-requests.md
+  pergunta: 'O revisor pediu um ajuste no seu pull request. O que você faz?'
+  opcoes:
+    - 'Fecha o PR e abre outro com as correções.'
+    - 'Faz novos commits na mesma branch e dá `git push`; o PR é atualizado automaticamente.'
+    - 'Edita o commit antigo pelo site do GitHub.'
+    - 'Pede ao revisor para corrigir.'
+  resposta: 1
+  explicacao: 'O pull request acompanha a branch. Qualquer commit novo enviado para ela aparece no mesmo PR.'
+
+- modulo: 5
+  aula: 05-open-source/03-pull-requests.md
+  pergunta: 'Qual comando baixa o pull request número 5 para uma branch local chamada `revisao-pr-5`?'
+  opcoes:
+    - '`git fetch origin pull/5/head:revisao-pr-5`'
+    - '`git clone pull/5`'
+    - '`git checkout pr-5`'
+    - '`git pull request 5`'
+  resposta: 0
+  explicacao: 'O GitHub disponibiliza cada PR na referência `pull/NÚMERO/head`. Assim você testa o código localmente antes de aceitar.'
+
+# ---------------------------------------------------------------- Módulo 6
+- modulo: 6
+  aula: 06-curriculo-online/01-curriculo-e-plugins.md
+  pergunta: 'Qual nome de repositório faz o GitHub Pages publicar um site em `https://seu-usuario.github.io`?'
+  opcoes:
+    - '`site`'
+    - '`github-pages`'
+    - '`seu-usuario.github.io`'
+    - '`index.html`'
+  resposta: 2
+  explicacao: 'Um repositório com o nome exato `seu-usuario.github.io` vira o site principal da sua conta no GitHub Pages.'
+
+- modulo: 6
+  aula: 06-curriculo-online/01-curriculo-e-plugins.md
+  pergunta: 'Que tipo de site o GitHub Pages hospeda de graça?'
+  opcoes:
+    - 'Sites estáticos (HTML, CSS e JavaScript).'
+    - 'Sites com banco de dados e servidor próprio.'
+    - 'Apenas blogs em WordPress.'
+    - 'Apenas arquivos PDF.'
+  resposta: 0
+  explicacao: 'O GitHub Pages serve arquivos estáticos. Sites com servidor ou banco de dados precisam de outro tipo de hospedagem.'
+
+- modulo: 6
+  aula: 06-curriculo-online/01-curriculo-e-plugins.md
+  pergunta: 'O que o recurso de *blame* em linha da extensão GitLens mostra?'
+  opcoes:
+    - 'Erros de digitação no código.'
+    - 'Quem alterou a linha por último, quando e em qual commit.'
+    - 'Sugestões de mensagens de commit.'
+    - 'O tempo que você passou editando a linha.'
+  resposta: 1
+  explicacao: 'O GitLens mostra essas informações em cinza ao lado da linha selecionada, direto no editor.'
+
+- modulo: 6
+  aula: 06-curriculo-online/01-curriculo-e-plugins.md
+  pergunta: 'Qual é o foco da extensão Git History para o VS Code?'
+  opcoes:
+    - 'Resolver conflitos automaticamente.'
+    - 'Publicar sites no GitHub Pages.'
+    - 'Gerar mensagens de commit.'
+    - 'Mostrar o histórico de commits em um gráfico interativo.'
+  resposta: 3
+  explicacao: 'O Git History desenha branches e merges e permite ver os detalhes e as alterações de cada commit.'
+
+- modulo: 6
+  aula: 06-curriculo-online/01-curriculo-e-plugins.md
+  pergunta: 'O site do GitHub Pages não apareceu. Onde conferir se a publicação está ativada?'
+  opcoes:
+    - 'Em **Settings → Pages** do repositório.'
+    - 'Na aba **Issues**.'
+    - 'No arquivo `.gitignore`.'
+    - 'Em **Settings → Collaborators**.'
+  resposta: 0
+  explicacao: 'Em Settings → Pages você vê se o site está publicado, a partir de qual branch e qual é o endereço.'
+
+# ---------------------------------------------------------------- Módulo 7
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Como escrever um título de nível 2 em Markdown?'
+  opcoes:
+    - '`#Título`'
+    - '`## Título`'
+    - '`<h2 Título>`'
+    - '`**Título**`'
+  resposta: 1
+  explicacao: 'O número de `#` define o nível, e é obrigatório um espaço depois dos `#`. `**Título**` é só texto em negrito.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Qual sintaxe deixa um texto em **negrito**?'
+  opcoes:
+    - '`*texto*`'
+    - '`~~texto~~`'
+    - '`**texto**`'
+    - '`_texto_`'
+  resposta: 2
+  explicacao: 'Dois asteriscos (ou dois sublinhados) de cada lado deixam em negrito. Um só deixa em itálico, e `~~` risca o texto.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Qual é a sintaxe correta de um link em Markdown?'
+  opcoes:
+    - '`[texto](https://github.com)`'
+    - '`(texto)[https://github.com]`'
+    - '`[texto] (https://github.com)`'
+    - '`<texto>(https://github.com)`'
+  resposta: 0
+  explicacao: 'Texto entre colchetes seguido imediatamente do endereço entre parênteses, sem espaço entre `]` e `(`.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Qual é a diferença entre a sintaxe de um link e a de uma imagem?'
+  opcoes:
+    - 'A imagem usa chaves no lugar de colchetes.'
+    - 'A imagem precisa de HTML; não existe sintaxe em Markdown.'
+    - 'Não há diferença: o Markdown descobre pelo endereço.'
+    - 'A imagem tem um `!` na frente: `![texto alternativo](url)`.'
+  resposta: 3
+  explicacao: 'O texto entre colchetes vira o texto alternativo, lido por leitores de tela e exibido se a imagem não carregar.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Como fazer um bloco de código com cores (syntax highlighting) para Python?'
+  opcoes:
+    - 'Colocar o código entre aspas.'
+    - 'Abrir com três crases seguidas de `python` e fechar com três crases.'
+    - 'Começar cada linha com `>`.'
+    - 'Colocar o código em negrito.'
+  resposta: 1
+  explicacao: 'O nome da linguagem logo depois das três crases de abertura ativa as cores. Uma crase de cada lado é usada para código em linha.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Como criar uma lista de tarefas (checkbox) no GitHub?'
+  opcoes:
+    - '`- [ ] tarefa pendente` e `- [x] tarefa concluída`'
+    - '`[checkbox] tarefa`'
+    - '`* (x) tarefa`'
+    - '`<check>tarefa</check>`'
+  resposta: 0
+  explicacao: 'Um item de lista com `[ ]` vira uma caixa vazia; com `[x]`, uma caixa marcada.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'Qual sintaxe cria uma caixa de destaque (alerta) do tipo "Nota" no GitHub?'
+  opcoes:
+    - '`!!! Nota`'
+    - '`:::nota`'
+    - '`> [!NOTE]` na primeira linha de uma citação'
+    - '`<nota>texto</nota>`'
+  resposta: 2
+  explicacao: 'O GitHub reconhece `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]` e `> [!CAUTION]`. A sintaxe `!!!` é de outras ferramentas e não funciona no GitHub.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/01-markdown.md
+  pergunta: 'O que acontece com `<span style="color:red">texto</span>` em um README no GitHub?'
+  opcoes:
+    - 'O texto aparece em vermelho.'
+    - 'O GitHub mostra um erro e não exibe o arquivo.'
+    - 'O texto fica oculto.'
+    - 'O GitHub remove o estilo, e o texto aparece sem cor.'
+  resposta: 3
+  explicacao: 'Por segurança, o GitHub remove atributos de estilo. Para chamar atenção, use negrito, alertas ou emojis.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/02-gists.md
+  pergunta: 'Um Gist **secreto** é privado?'
+  opcoes:
+    - 'Sim, só você pode ver.'
+    - 'Não: ele não aparece em buscas, mas qualquer pessoa com o link consegue ver.'
+    - 'Sim, desde que tenha senha.'
+    - 'Não, ele é idêntico a um Gist público.'
+  resposta: 1
+  explicacao: 'Secreto não é o mesmo que privado. Nunca coloque senhas, tokens ou dados pessoais em um Gist.'
+
+- modulo: 7
+  aula: 07-markdown-e-gist/02-gists.md
+  pergunta: 'O que um Gist é "por baixo dos panos"?'
+  opcoes:
+    - 'Um repositório Git pequeno, com histórico de versões, que pode até ser clonado.'
+    - 'Um arquivo PDF.'
+    - 'Uma issue especial.'
+    - 'Uma branch do seu repositório principal.'
+  resposta: 0
+  explicacao: 'Cada edição vira uma revisão, e dá para clonar o Gist com `git clone`.'
+
+# ---------------------------------------------------------------- Módulo 8
+- modulo: 8
+  aula: 08-extras/01-git-stash.md
+  pergunta: 'Para que serve o `git stash`?'
+  opcoes:
+    - 'Para apagar definitivamente as alterações.'
+    - 'Para enviar alterações ao GitHub sem commit.'
+    - 'Para guardar temporariamente as alterações não commitadas, deixando a pasta limpa.'
+    - 'Para criar uma tag.'
+  resposta: 2
+  explicacao: 'O stash é uma "gaveta" local: você guarda o trabalho pela metade, resolve outra coisa e depois recupera com `git stash pop`.'
+
+- modulo: 8
+  aula: 08-extras/01-git-stash.md
+  pergunta: 'Qual é a diferença entre `git stash pop` e `git stash apply`?'
+  opcoes:
+    - 'O `pop` aplica e remove o stash da lista; o `apply` aplica e mantém na lista.'
+    - 'O `pop` apaga sem aplicar; o `apply` aplica.'
+    - 'São equivalentes.'
+    - 'O `apply` só funciona em arquivos novos.'
+  resposta: 0
+  explicacao: 'O `apply` é útil para aplicar o mesmo stash em mais de uma branch. Depois, ele pode ser apagado com `git stash drop`.'
+
+- modulo: 8
+  aula: 08-extras/01-git-stash.md
+  pergunta: 'Você criou um arquivo novo (untracked) e rodou `git stash`. O arquivo foi guardado?'
+  opcoes:
+    - 'Sim, o stash guarda tudo.'
+    - 'Sim, mas só se ele estiver no `.gitignore`.'
+    - 'Não, ele é apagado.'
+    - 'Não: por padrão o stash só guarda arquivos rastreados; use `git stash -u`.'
+  resposta: 3
+  explicacao: 'Arquivos novos ficam na pasta, intocados. O `-u` (`--include-untracked`) inclui esses arquivos no stash.'
+
+- modulo: 8
+  aula: 08-extras/02-chave-ssh.md
+  pergunta: 'Qual arquivo da chave SSH você cadastra no GitHub?'
+  opcoes:
+    - '`id_ed25519`, a chave privada.'
+    - '`id_ed25519.pub`, a chave pública.'
+    - '`known_hosts`'
+    - 'Os dois arquivos.'
+  resposta: 1
+  explicacao: 'A chave pública (`.pub`) vai para o GitHub. A privada nunca sai do seu computador; se vazar, apague-a no GitHub e gere outra.'
+
+- modulo: 8
+  aula: 08-extras/02-chave-ssh.md
+  pergunta: 'Qual comando testa se a conexão SSH com o GitHub está funcionando?'
+  opcoes:
+    - '`git ssh --test`'
+    - '`ssh-keygen -t ed25519`'
+    - '`ssh -T git@github.com`'
+    - '`git remote -v`'
+  resposta: 2
+  explicacao: 'Se der certo, aparece "Hi seu-usuario! You''ve successfully authenticated". O `ssh-keygen` serve para gerar a chave.'
+
+- modulo: 8
+  aula: 08-extras/03-github-flow.md
+  pergunta: 'Qual é a regra principal do GitHub Flow?'
+  opcoes:
+    - 'Ninguém faz commit direto na `main`: toda mudança nasce em uma branch e entra por pull request.'
+    - 'Cada pessoa trabalha direto na `main` e faz push várias vezes ao dia.'
+    - 'Existem branches fixas `develop`, `release` e `hotfix`.'
+    - 'Só a pessoa dona do repositório pode fazer commits.'
+  resposta: 0
+  explicacao: 'Assim a `main` fica sempre estável. Branches fixas como `develop` e `release` são do Git Flow, um modelo mais complexo.'
+
+- modulo: 8
+  aula: 08-extras/04-github-actions.md
+  pergunta: 'Onde ficam os arquivos de workflow do GitHub Actions?'
+  opcoes:
+    - 'Na raiz do repositório, com o nome `actions.txt`.'
+    - 'Na aba Settings do GitHub, sem arquivo no repositório.'
+    - 'Dentro da pasta `.git`.'
+    - 'Na pasta `.github/workflows/`, em arquivos `.yml`.'
+  resposta: 3
+  explicacao: 'Cada arquivo `.yml` nessa pasta descreve um workflow: quando roda (`on`), em qual máquina (`runs-on`) e quais passos executa (`steps`).'
+
+- modulo: 8
+  aula: 08-extras/04-github-actions.md
+  pergunta: 'O que significa CI (Integração Contínua)?'
+  opcoes:
+    - 'Publicar o site uma vez por mês.'
+    - 'Testar o código automaticamente a cada alteração enviada.'
+    - 'Integrar o GitHub com redes sociais.'
+    - 'Fazer backup contínuo do computador.'
+  resposta: 1
+  explicacao: 'Com CI, um problema é descoberto logo depois do push. A CD (entrega contínua) vai além e publica automaticamente quando tudo passa.'
+
+- modulo: 8
+  aula: 08-extras/05-erros-comuns.md
+  pergunta: 'Ao rodar `git push`, apareceu: `The current branch minha-branch has no upstream branch`. Como resolver?'
+  opcoes:
+    - '`git push -u origin minha-branch`'
+    - '`git init`'
+    - '`git reset --hard`'
+    - '`git branch -D minha-branch`'
+  resposta: 0
+  explicacao: 'A branch existe só no seu computador. O `-u` cria a branch no remoto e liga as duas.'
+
+- modulo: 8
+  aula: 08-extras/05-erros-comuns.md
+  pergunta: 'Seu push foi recusado com `! [rejected] main -> main (fetch first)`. O que fazer?'
+  opcoes:
+    - 'Apagar o repositório e criar outro.'
+    - 'Usar sempre `git push --force`.'
+    - 'Trazer as novidades com `git pull` e depois rodar `git push` de novo.'
+    - 'Renomear a branch.'
+  resposta: 2
+  explicacao: 'O remoto tem commits que você ainda não tem. Forçar o push apagaria o trabalho de outras pessoas.'
+
+- modulo: 8
+  aula: 08-extras/05-erros-comuns.md
+  pergunta: 'O `git commit` abriu o editor Vim. Como salvar a mensagem e sair?'
+  opcoes:
+    - '`Ctrl+S` e depois fechar o terminal.'
+    - 'Apertar `Esc`, digitar `:wq` e apertar `Enter`.'
+    - 'Apertar `Ctrl+C` duas vezes.'
+    - 'Digitar `exit` e apertar `Enter`.'
+  resposta: 1
+  explicacao: '`:wq` salva e sai; `:q!` sai sem salvar. Para não cair mais no Vim, configure outro editor com `git config --global core.editor "code --wait"`.'

@@ -16,6 +16,7 @@ import sys
 import urllib.parse
 
 sys.path.insert(0, os.path.dirname(__file__))
+from simulado import carregar  # noqa: E402
 from transform import ALERTS, strip_nav, walk  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -118,15 +119,39 @@ class Book:
                 out += f"\n**Resposta {n}**\n\n" + "\n".join(line(b) for b in body) + "\n"
         return out
 
+    def simulado(self):
+        perguntas = carregar(os.path.join(ROOT, "docs"))
+        letras = "abcd"
+        modulos = list(MODULES.values())
+        out = ["# Apêndice B · Simulado", "",
+               f"São **{len(perguntas)} perguntas** de múltipla escolha sobre todo o conteúdo. "
+               "Anote suas respostas e confira no **gabarito comentado**, no fim deste apêndice.", "",
+               "No site, o simulado tem **nota automática** e sorteia perguntas novas a cada tentativa: "
+               "<https://joshpcbrrj.github.io/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor/simulado/>", ""]
+        gabarito = ["## Gabarito comentado", ""]
+        atual = None
+        for n, p in enumerate(perguntas, 1):
+            if p["modulo"] != atual:
+                atual = p["modulo"]
+                out += [f"## {modulos[atual - 1]}", ""]
+            out += [f"**{n}.** {p['pergunta']}", ""]
+            out += [f"{letras[i]}) {op}" for i, op in enumerate(p["opcoes"])] + [""]
+            m = re.match(r"(\d+)-[^/]+/(\d+)-", p["aula"])
+            numero = f"{int(m.group(1))}.{int(m.group(2))}"
+            link = "#" + self.ids["docs/" + p["aula"]]
+            gabarito += [f"**{n}. {letras[p['resposta']]})** {p['explicacao']} [Revisar a aula {numero}]({link})", ""]
+        return "\n".join(out + gabarito)
+
     def build(self):
         parts = [open(os.path.join(ROOT, "epub", "introducao.md"), encoding="utf-8").read()]
         current = None
         for module, rel in lessons():
             if module != current:
                 current = module
-                title = MODULES.get(module, "Apêndice")
+                title = MODULES.get(module, "Apêndice A · Guia rápido e glossário")
                 parts.append(f"# {title}\n")
             parts.append(self.convert(rel))
+        parts.append(self.simulado())
         return "\n\n".join(parts)
 
 

@@ -8,6 +8,8 @@ edit_uri: edit/main/docs/
 copyright: Texto sob licença CC BY 4.0 · Material de apoio do curso © Geek University
 
 docs_dir: docs
+exclude_docs: |
+  simulado/perguntas.yml
 hooks:
   - scripts/mkdocs_hooks.py
 
@@ -80,6 +82,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/mathjax.js
+  - javascripts/simulado.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 extra_css:
@@ -88,6 +91,7 @@ extra_css:
 nav:
   - Início: index.md
   - Guia rápido: guia-rapido.md
+  - Simulado: simulado/index.md
   - 1 · Introdução:
       - 1.1 O que é controle de versão?: 01-introducao/01-controle-de-versao.md
       - 1.2 O que é o Git?: 01-introducao/02-o-que-e-git.md
