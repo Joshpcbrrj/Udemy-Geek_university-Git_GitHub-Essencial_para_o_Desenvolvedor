@@ -59,6 +59,41 @@ Existe **um único servidor central** com todo o histórico. Cada pessoa baixa s
 - Ele permite voltar no tempo, trabalhar em equipe e experimentar com segurança.
 - Existem dois modelos: **centralizado** (um servidor guarda tudo) e **distribuído** (cada pessoa tem uma cópia completa).
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Explique, com suas palavras, a diferença entre controle de versão **centralizado** e **distribuído**.
+
+<details>
+<summary>Ver resposta</summary>
+
+No **centralizado**, só o servidor guarda o histórico completo; cada pessoa tem apenas a versão atual dos arquivos e depende do servidor para registrar alterações. No **distribuído**, cada pessoa tem uma cópia completa do projeto **com todo o histórico** no próprio computador.
+
+</details>
+
+**2.** O servidor da sua empresa caiu. Em qual dos dois modelos você ainda consegue ver o histórico e registrar novas alterações?
+
+<details>
+<summary>Ver resposta</summary>
+
+No **distribuído** (como o Git). Como o histórico inteiro está no seu computador, você continua trabalhando normalmente e sincroniza com o servidor quando ele voltar.
+
+</details>
+
+**3.** Cite três problemas de controlar versões salvando cópias como `trabalho_final_v2_DEFINITIVO.docx`.
+
+<details>
+<summary>Ver resposta</summary>
+
+Alguns exemplos:
+- não dá para saber **o que mudou** de uma cópia para outra;
+- não fica registrado **quem** mudou nem **por quê**;
+- as cópias ocupam espaço e geram confusão sobre qual é a versão certa;
+- quando duas pessoas editam ao mesmo tempo, juntar as alterações vira um trabalho manual e propenso a erros.
+
+</details>
+
 ---
 
 <div align="center">

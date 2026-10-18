@@ -25,21 +25,43 @@ git merge feature
 
 Acontece quando a `main` **não teve nenhum commit novo** desde que a `feature` foi criada. O Git só "empurra" a etiqueta da `main` para frente. Não cria commit extra.
 
-```text
-Antes:                        Depois:
-main:    A ── B               main/feature: A ── B ── C ── D
-                \
-feature:         C ── D
+**Antes:**
+
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
+```
+
+**Depois** (a `main` só avançou até `D`, sem commit novo):
+
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    commit id: "D"
 ```
 
 ### 2. Merge de três vias (commit de merge)
 
 Acontece quando **as duas branches** receberam commits novos. O Git combina tudo e cria um **commit de merge**, que tem **dois "pais"** (um de cada branch).
 
-```text
-main:    A ── B ── E ────── M   ← commit de merge
-                \          /
-feature:         C ── D ──
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
+    checkout main
+    commit id: "E"
+    merge feature id: "M (merge)"
 ```
 
 ## ⚔️ E se der conflito?
@@ -96,6 +118,49 @@ Ele copia aquele commit para a branch atual.
 - **Fast-forward**: só avança o ponteiro. **Três vias**: cria um commit de merge.
 - Conflito → resolva o arquivo → `git add` → `git commit` (ou `git merge --abort` para desistir).
 - `git cherry-pick` copia um único commit de outra branch.
+
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Faça o merge da branch `feature-boas-vindas` na `main`. Foi um merge *fast-forward*? Como saber?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch main
+git merge feature-boas-vindas
+```
+Se a `main` não recebeu commits novos desde a criação da branch, a saída mostra **"Fast-forward"** e nenhum commit de merge é criado.
+
+</details>
+
+**2.** Provoque um merge de **três vias**: crie uma branch, faça um commit nela, volte para a `main`, faça outro commit (em outro arquivo) e faça o merge. Veja o resultado em gráfico.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch -c outra-feature
+echo "a" > a.txt && git add a.txt && git commit -m "Adiciona a.txt"
+git switch main
+echo "b" > b.txt && git add b.txt && git commit -m "Adiciona b.txt"
+git merge outra-feature        # abre o editor com a mensagem do merge: salve e feche
+git log --graph --oneline --all
+```
+O gráfico mostra as duas linhas se juntando em um **commit de merge**.
+
+</details>
+
+**3.** Para trazer as alterações da branch `feature` para a `main`, em qual branch você precisa estar quando roda `git merge`?
+
+<details>
+<summary>Ver resposta</summary>
+
+Na **`main`**, que é a branch que vai **receber** as alterações: `git switch main` e depois `git merge feature`.
+
+</details>
 
 ---
 

@@ -104,6 +104,47 @@ git push origin main
 - Fluxo: Fork → `clone` do seu fork → `remote add upstream` → branch → commit → `push` → pull request.
 - Para atualizar: `git fetch upstream` + `git merge upstream/main` + `git push origin main`.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Faça um fork deste repositório, clone o **seu** fork e configure o `upstream`. Confira os remotos.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git clone https://github.com/SEU-USUARIO/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor.git
+cd Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor
+git remote add upstream https://github.com/Joshpcbrrj/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor.git
+git remote -v      # devem aparecer origin e upstream
+```
+
+</details>
+
+**2.** Atualize a `main` do seu fork com as novidades do repositório original.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch main
+git fetch upstream
+git merge upstream/main
+git push origin main
+```
+
+</details>
+
+**3.** Qual é a diferença entre `origin` e `upstream` em um fork?
+
+<details>
+<summary>Ver resposta</summary>
+
+**origin** é o seu fork (onde você tem permissão para dar push). **upstream** é o repositório original, de onde você só busca as novidades.
+
+</details>
+
 ---
 
 <div align="center">

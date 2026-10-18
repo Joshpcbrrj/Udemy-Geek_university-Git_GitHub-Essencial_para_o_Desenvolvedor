@@ -51,6 +51,39 @@ Durante o desenvolvimento, o histórico do Git permite responder perguntas como:
 - Cada pessoa tem o histórico completo no próprio computador, o que permite trabalhar offline.
 - Os pilares do Git são: **commits**, **branches**, **merge** e **repositórios remotos**.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Quem criou o Git, em que ano e com qual objetivo?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Linus Torvalds**, em **2005**. Ele precisava de uma ferramenta rápida e confiável para coordenar milhares de pessoas desenvolvendo o kernel do Linux.
+
+</details>
+
+**2.** Por que quase todas as operações do Git são muito rápidas?
+
+<details>
+<summary>Ver resposta</summary>
+
+Porque o Git é **distribuído**: o histórico completo está no seu computador, então operações como commit, log e diff acontecem no seu disco, sem depender da rede.
+
+</details>
+
+**3.** Ligue cada termo à sua descrição: **commit**, **branch**, **merge**, **repositório remoto**.
+
+(a) junta o trabalho de linhas paralelas · (b) cópia do projeto em um servidor · (c) ponto salvo no histórico · (d) linha de trabalho paralela
+
+<details>
+<summary>Ver resposta</summary>
+
+commit → (c) · branch → (d) · merge → (a) · repositório remoto → (b).
+
+</details>
+
 ---
 
 <div align="center">

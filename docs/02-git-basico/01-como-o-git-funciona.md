@@ -75,6 +75,41 @@ Como cada commit guarda autor, data e mensagem, o Git consegue mostrar **toda a 
 - Todo arquivo passa por três áreas: **Working Directory → Staging Area → Repositório**.
 - **Branches** permitem trabalhar em paralelo; **merge** junta esse trabalho; **remotos** permitem compartilhar.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Na pasta `treino-git`, confirme que existe a pasta oculta `.git`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+ls -a                  # Git Bash, Linux ou macOS
+Get-ChildItem -Force   # PowerShell
+```
+A pasta `.git` deve aparecer na lista. (Se você ainda não rodou `git init` nela, rode antes.)
+
+</details>
+
+**2.** Explique as três áreas do Git (working directory, staging area e repositório) usando uma analogia **sua**, diferente da caixa de mudança.
+
+<details>
+<summary>Ver resposta</summary>
+
+Um exemplo: **fazer compras**. O *working directory* são as prateleiras do mercado, onde você escolhe os produtos; a *staging area* é o carrinho, onde ficam os itens que você decidiu levar; o *commit* é passar no caixa e receber o cupom fiscal, que fica registrado para sempre.
+
+</details>
+
+**3.** Quando você faz um commit, o Git guarda uma cópia nova de **todos** os arquivos do projeto?
+
+<details>
+<summary>Ver resposta</summary>
+
+Não. Ele guarda uma "foto" do estado do projeto, mas os arquivos que **não mudaram** não são copiados de novo: o Git só aponta para a versão que já tinha. Por isso o histórico ocupa pouco espaço.
+
+</details>
+
 ---
 
 <div align="center">

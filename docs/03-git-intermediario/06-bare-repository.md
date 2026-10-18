@@ -57,6 +57,41 @@ Repositórios bare também podem ser acessados pela rede usando **HTTP/HTTPS** o
 - Criado com `git init --bare nome.git`.
 - O GitHub funciona como um grande servidor de repositórios centrais.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Simule um servidor na sua máquina: crie um repositório bare, clone-o em duas pastas diferentes, faça um commit e um push em uma delas e um pull na outra.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git init --bare servidor.git
+git clone servidor.git pessoa-a
+git clone servidor.git pessoa-b
+
+cd pessoa-a
+echo "oi" > oi.txt && git add oi.txt && git commit -m "Primeiro commit"
+git push origin HEAD
+
+cd ../pessoa-b
+git pull origin HEAD
+ls      # oi.txt apareceu!
+```
+(Usamos `HEAD` para não depender do nome da branch padrão, que pode ser `main` ou `master`.)
+
+</details>
+
+**2.** Por que os servidores Git usam repositórios bare?
+
+<details>
+<summary>Ver resposta</summary>
+
+Porque um repositório bare **não tem arquivos de trabalho**. Assim, ninguém edita arquivos nele, e os pushes nunca deixam uma pasta de trabalho em estado inconsistente.
+
+</details>
+
 ---
 
 <div align="center">

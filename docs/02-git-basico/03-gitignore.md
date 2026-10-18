@@ -76,6 +76,50 @@ Thumbs.db
 - Use `*` para "qualquer coisa", `/` no fim para pastas, `**/` para qualquer nível e `!` para exceções.
 - Arquivos que já foram commitados precisam de `git rm --cached` para deixarem de ser rastreados.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No `treino-git`, crie um `.gitignore` que ignore todos os arquivos `.log` e a pasta `temp/`. Crie os arquivos `erro.log` e `temp/a.txt` e confira com `git status` que eles não aparecem.
+
+<details>
+<summary>Ver resposta</summary>
+
+Conteúdo do `.gitignore`:
+```gitignore
+*.log
+temp/
+```
+O `git status` deve mostrar só o próprio `.gitignore` como arquivo novo.
+
+</details>
+
+**2.** Agora faça uma exceção: o arquivo `importante.log` **deve** ser versionado.
+
+<details>
+<summary>Ver resposta</summary>
+
+Adicione esta linha **depois** de `*.log`:
+```gitignore
+!importante.log
+```
+
+</details>
+
+**3.** Você fez commit do arquivo `senha.env` sem querer. Como fazer o Git parar de rastreá-lo sem apagá-lo do seu computador?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+echo "senha.env" >> .gitignore
+git rm --cached senha.env
+git commit -m "Para de rastrear senha.env"
+```
+⚠️ O arquivo continua nos commits **antigos**. Se o commit já foi enviado ao GitHub, considere a senha **comprometida** e troque-a.
+
+</details>
+
 ---
 
 <div align="center">

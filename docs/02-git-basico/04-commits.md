@@ -78,6 +78,42 @@ A mensagem é para o "você do futuro" e para as outras pessoas do time. Algumas
 - Boas mensagens são curtas, específicas e falam de um assunto só.
 - Todos os commits podem ser consultados depois com `git log` (próxima aula).
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No `treino-git`, faça três commits diferentes, cada um com uma alteração pequena e uma boa mensagem.
+
+<details>
+<summary>Ver resposta</summary>
+
+Exemplo:
+```bash
+echo "Linha 1" >> ola.txt && git add ola.txt && git commit -m "Adiciona primeira linha em ola.txt"
+echo "# Treino" > README.md && git add README.md && git commit -m "Cria README do projeto de treino"
+echo "Linha 2" >> ola.txt && git commit -am "Adiciona segunda linha em ola.txt"
+```
+
+</details>
+
+**2.** Reescreva estas mensagens de commit ruins para que fiquem claras: `update`, `fix`, `coisas`.
+
+<details>
+<summary>Ver resposta</summary>
+
+Depende do que foi feito, mas, por exemplo: `Atualiza instruções de instalação no README`, `Corrige validação do campo de e-mail`, `Remove arquivos de teste não utilizados`. O importante é dizer **o que** mudou.
+
+</details>
+
+**3.** Você criou um arquivo **novo** e rodou `git commit -am "Adiciona arquivo"`. O arquivo entrou no commit?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** O `-a` só inclui arquivos que **já são rastreados**. Para um arquivo novo, você precisa rodar `git add` antes.
+
+</details>
+
 ---
 
 <div align="center">

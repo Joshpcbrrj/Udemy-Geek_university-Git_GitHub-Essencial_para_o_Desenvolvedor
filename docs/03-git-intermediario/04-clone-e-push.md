@@ -83,6 +83,45 @@ git push
 | `git push -u origin branch` | Envia uma branch nova e liga ela ao remoto |
 | `git push` | Envia a branch atual (depois de já ter usado `-u`) |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Clone um repositório público qualquer (pode ser este!) e veja para onde o remoto `origin` aponta.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git clone https://github.com/Joshpcbrrj/Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor.git
+cd Udemy-Geek_university-Git_GitHub-Essencial_para_o_Desenvolvedor
+git remote -v
+```
+
+</details>
+
+**2.** Para que serve o `-u` em `git push -u origin minha-branch`?
+
+<details>
+<summary>Ver resposta</summary>
+
+Ele cria a branch no remoto (se ainda não existir) e **liga** a branch local à remota. Depois disso, basta digitar `git push` e `git pull`, sem repetir `origin minha-branch`.
+
+</details>
+
+**3.** Seu push foi rejeitado com a mensagem `rejected ... (fetch first)`. O que aconteceu e como resolver?
+
+<details>
+<summary>Ver resposta</summary>
+
+Alguém enviou commits para a mesma branch antes de você. Traga as novidades e envie de novo:
+```bash
+git pull
+git push
+```
+
+</details>
+
 ---
 
 <div align="center">

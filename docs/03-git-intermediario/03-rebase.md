@@ -8,18 +8,31 @@
 
 Imagine que você criou a branch `feature` a partir da `main`. Enquanto você trabalhava, outras pessoas adicionaram commits na `main`:
 
-```text
-main:    A ── B ── E ── F
-               \
-feature:        C ── D
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    branch feature
+    checkout feature
+    commit id: "C"
+    commit id: "D"
+    checkout main
+    commit id: "E"
+    commit id: "F"
 ```
 
 Com o **rebase**, o Git pega os seus commits (`C` e `D`) e os reaplica **depois** do último commit da `main`, como se você tivesse começado a branch agora:
 
-```text
-main:    A ── B ── E ── F
-                         \
-feature:                  C' ── D'
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "E"
+    commit id: "F"
+    branch feature
+    checkout feature
+    commit id: "C'"
+    commit id: "D'"
 ```
 
 Os commits `C'` e `D'` têm o mesmo conteúdo, mas são **commits novos** (com hashes diferentes).
@@ -103,6 +116,47 @@ Veja um exemplo completo de *squash* na aula [2.8](../02-git-basico/08-desfazend
 - Em conflitos: resolver → `git add` → `git rebase --continue` (ou `--abort` para desistir).
 - **Nunca** faça rebase em commits que já foram compartilhados.
 - `git rebase -i` permite editar, juntar e remover commits.
+
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Crie uma branch `feature-rebase` com um commit, volte para a `main`, faça outro commit e então faça o rebase da sua branch sobre a `main`. Compare o gráfico antes e depois.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch -c feature-rebase
+echo "c" > c.txt && git add c.txt && git commit -m "Adiciona c.txt"
+git switch main
+echo "d" > d.txt && git add d.txt && git commit -m "Adiciona d.txt"
+git log --graph --oneline --all   # antes: duas linhas separadas
+
+git switch feature-rebase
+git rebase main
+git log --graph --oneline --all   # depois: uma linha reta
+```
+
+</details>
+
+**2.** Por que não devemos fazer rebase da `main` que já está no GitHub e é usada por outras pessoas?
+
+<details>
+<summary>Ver resposta</summary>
+
+Porque o rebase **cria commits novos** (com outros hashes) e descarta os antigos. Quem já tinha baixado os commits antigos fica com um histórico diferente do remoto, o que causa conflitos e confusão.
+
+</details>
+
+**3.** Durante um rebase, você resolveu um conflito e deu `git add`. Qual é o próximo comando?
+
+<details>
+<summary>Ver resposta</summary>
+
+`git rebase --continue`. (No rebase não se usa `git commit` para concluir.)
+
+</details>
 
 ---
 

@@ -437,6 +437,70 @@ $$
 | Alerta (GitHub) | `> [!NOTE]` |
 | Seção recolhível | `<details><summary>...</summary>...</details>` |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Crie um `README.md` para o seu `treino-git` com: um título, uma lista, uma tabela, um bloco de código e uma lista de tarefas.
+
+<details>
+<summary>Ver resposta</summary>
+
+Um exemplo:
+````markdown
+# Treino Git
+
+Repositório para praticar os comandos do curso.
+
+## O que já aprendi
+
+- Commits
+- Branches
+
+| Comando | Para que serve |
+| --- | --- |
+| `git status` | Ver o status |
+
+```bash
+git log --oneline
+```
+
+- [x] Aprender commits
+- [ ] Aprender rebase
+````
+
+</details>
+
+**2.** Adicione ao README um alerta do tipo dica e uma seção recolhível.
+
+<details>
+<summary>Ver resposta</summary>
+
+```markdown
+> [!TIP]
+> Rode `git status` sempre que estiver em dúvida.
+
+<details>
+<summary>Comandos favoritos</summary>
+
+- `git log --oneline --graph --all`
+
+</details>
+```
+
+</details>
+
+**3.** Encontre e corrija os erros: `#Título`, `**negrito*` e `[Site] (https://github.com)`.
+
+<details>
+<summary>Ver resposta</summary>
+
+- `# Título` (falta o espaço depois do `#`);
+- `**negrito**` (os dois lados precisam de dois asteriscos);
+- `[Site](https://github.com)` (não pode haver espaço entre `]` e `(`).
+
+</details>
+
 ---
 
 <div align="center">

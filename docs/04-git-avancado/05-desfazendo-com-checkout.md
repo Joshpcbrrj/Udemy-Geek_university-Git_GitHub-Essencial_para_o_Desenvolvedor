@@ -76,6 +76,41 @@ Seus arquivos voltam a ficar exatamente como estavam naquele commit. Você entra
 - `git checkout <hash>`: visita um commit antigo (detached HEAD) sem apagar nada.
 - Prefira `git restore` e `git switch` no dia a dia: são mais claros.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Edite o `README.md` (sem dar `git add`) e descarte a alteração usando `checkout`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git checkout -- README.md
+```
+
+</details>
+
+**2.** Edite o `README.md`, dê `git add` e depois descarte a alteração **do staging e da pasta** usando `checkout`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git checkout HEAD -- README.md
+```
+
+</details>
+
+**3.** Escreva o equivalente moderno (com `restore` ou `switch`) de cada comando: `git checkout -- arquivo`, `git checkout main` e `git checkout -b nova`.
+
+<details>
+<summary>Ver resposta</summary>
+
+`git restore arquivo` · `git switch main` · `git switch -c nova`.
+
+</details>
+
 ---
 
 <div align="center">

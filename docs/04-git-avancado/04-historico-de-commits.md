@@ -70,6 +70,41 @@ No GitHub (e também no GitLab e no Bitbucket), dá para navegar pelo histórico
 - **Interfaces gráficas:** visualização em gráfico das branches e commits.
 - **GitHub:** aba de commits, com o "diff" colorido de cada alteração.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Veja todos os commits que alteraram o arquivo `README.md` do `treino-git`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log --oneline -- README.md
+```
+
+</details>
+
+**2.** Descubra quem alterou cada linha do `README.md` e em qual commit.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git blame README.md
+```
+
+</details>
+
+**3.** No GitHub, abra o histórico do seu `treino-git` e encontre a alteração que você fez pelo site na aula anterior. Quais cores indicam linhas adicionadas e removidas?
+
+<details>
+<summary>Ver resposta</summary>
+
+Clique no link de commits (ícone de relógio 🕒) e depois no commit desejado. Linhas **verdes** foram adicionadas e linhas **vermelhas** foram removidas.
+
+</details>
+
 ---
 
 <div align="center">

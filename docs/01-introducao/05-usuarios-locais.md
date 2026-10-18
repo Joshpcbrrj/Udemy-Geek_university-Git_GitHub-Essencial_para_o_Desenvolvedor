@@ -80,6 +80,47 @@ git config --unset credential.helper
 - A configuração local tem prioridade sobre a global.
 - Nome/e-mail **assinam** os commits; **credenciais** (token, SSH, login no navegador) dão **permissão** para enviar código ao GitHub.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Crie uma pasta chamada `treino-git` (vamos usá-la nos próximos exercícios), transforme-a em repositório e configure um e-mail **só para ela**. Depois prove que a configuração local "vence" a global.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+mkdir treino-git
+cd treino-git
+git init
+git config user.email "trabalho@empresa.com"
+
+git config user.email            # mostra trabalho@empresa.com (local)
+git config --global user.email   # mostra o seu e-mail global
+```
+
+</details>
+
+**2.** Agora remova a configuração local, voltando a usar a global.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git config --unset user.email
+```
+
+</details>
+
+**3.** Por que não é uma boa ideia usar uma URL como `https://usuario:token@github.com/...`?
+
+<details>
+<summary>Ver resposta</summary>
+
+Porque o token fica salvo **em texto puro** no arquivo `.git/config`. Qualquer pessoa ou programa com acesso à pasta consegue ler e usar sua credencial. Prefira o Git Credential Manager ou uma chave SSH.
+
+</details>
+
 ---
 
 <div align="center">

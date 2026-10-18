@@ -74,6 +74,47 @@ git config user.name
 | `git config --global core.editor "code --wait"` | Definir o editor padrão |
 | `git config --global --list` | Ver todas as configurações |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Instale o Git e confira qual versão foi instalada.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git --version
+```
+Se aparecer algo como `git version 2.x.x`, a instalação funcionou.
+
+</details>
+
+**2.** Configure seu nome e e-mail globais e depois confira se ficaram corretos.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@example.com"
+git config --global --list
+```
+
+</details>
+
+**3.** Configure o VS Code como editor padrão e faça os novos repositórios começarem com a branch `main`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git config --global core.editor "code --wait"
+git config --global init.defaultBranch main
+```
+
+</details>
+
 ---
 
 <div align="center">

@@ -94,6 +94,45 @@ Depois de testar e aprovar, volte ao GitHub e faça o merge pela interface. Em s
 - Ajustes pedidos? Novos commits na mesma branch atualizam o PR.
 - **Aceitar:** revisar → testar (`git fetch origin pull/N/head:branch`) → dar feedback → **Merge pull request**.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No seu `treino-git`, crie uma branch, faça um commit, envie para o GitHub, abra um pull request para a `main` e faça o merge você mesmo.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch -c melhora-readme
+echo "Mais uma linha" >> README.md && git commit -am "Melhora o README"
+git push -u origin melhora-readme
+```
+No GitHub: **Compare & pull request → Create pull request → Merge pull request → Confirm merge**. Depois, no computador: `git switch main` e `git pull`.
+
+</details>
+
+**2.** Como baixar o pull request número 5 para uma branch local chamada `revisao-pr-5`?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git fetch origin pull/5/head:revisao-pr-5
+git switch revisao-pr-5
+```
+
+</details>
+
+**3.** O revisor pediu um ajuste no seu PR. Você precisa abrir um pull request novo?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** Faça novos commits **na mesma branch** e dê `git push`. O PR é atualizado automaticamente.
+
+</details>
+
 ---
 
 <div align="center">

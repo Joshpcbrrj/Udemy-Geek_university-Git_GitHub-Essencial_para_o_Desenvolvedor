@@ -83,6 +83,41 @@ git pull --rebase
 - `git pull` = `fetch` + `merge`: baixa e já junta na branch atual.
 - Boa prática: rode `git pull` **antes de começar a trabalhar** e **antes de fazer push**.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Explique a diferença entre `git fetch` e `git pull` com uma analogia sua.
+
+<details>
+<summary>Ver resposta</summary>
+
+Exemplo: o `fetch` é **baixar** as atualizações do celular sem instalar; o `pull` é baixar **e instalar** na hora.
+
+</details>
+
+**2.** Depois de um `git fetch`, como ver quais commits chegaram e ainda não estão na sua `main`?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log main..origin/main --oneline
+```
+
+</details>
+
+**3.** Como fazer um pull sem criar commit de merge, mantendo o histórico em linha reta?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git pull --rebase
+```
+
+</details>
+
 ---
 
 <div align="center">

@@ -102,6 +102,50 @@ git rebase --abort   # cancela o rebase
 - Edite → apague os marcadores → `git add` → `git commit` (ou `git rebase --continue`).
 - Para desistir: `git merge --abort` ou `git rebase --abort`.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Provoque e resolva um conflito no `treino-git`: duas branches alteram a **mesma linha** do mesmo arquivo e depois você faz o merge.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+echo "Título original" > titulo.txt && git add titulo.txt && git commit -m "Cria titulo.txt"
+
+git switch -c titulo-novo
+echo "Título da branch" > titulo.txt && git commit -am "Muda título na branch"
+
+git switch main
+echo "Título da main" > titulo.txt && git commit -am "Muda título na main"
+
+git merge titulo-novo     # CONFLICT!
+# abra titulo.txt, escolha o texto final e apague os marcadores
+git add titulo.txt
+git commit
+```
+
+</details>
+
+**2.** O que significa cada marcador: `<<<<<<< HEAD`, `=======` e `>>>>>>> titulo-novo`?
+
+<details>
+<summary>Ver resposta</summary>
+
+`<<<<<<< HEAD` inicia a **sua** versão (a da branch atual); `=======` separa as duas versões; `>>>>>>> titulo-novo` encerra a versão que está **chegando** da outra branch.
+
+</details>
+
+**3.** Você começou um merge, apareceu um conflito e quer desistir. Qual comando usa?
+
+<details>
+<summary>Ver resposta</summary>
+
+`git merge --abort`. O projeto volta a ficar exatamente como estava antes do merge.
+
+</details>
+
 ---
 
 <div align="center">

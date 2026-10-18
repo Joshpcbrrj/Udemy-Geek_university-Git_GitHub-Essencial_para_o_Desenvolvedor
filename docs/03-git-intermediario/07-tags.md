@@ -15,6 +15,16 @@ As duas são "etiquetas" que apontam para um commit, mas com uma diferença fund
 > [!TIP]
 > **Analogia:** a branch é o **marcador de página** que você vai avançando enquanto lê o livro. A tag é um **post-it** colado em uma página específica que você quer encontrar depois.
 
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B" tag: "v1.0.0"
+    commit id: "C"
+    commit id: "D"
+```
+
+A tag `v1.0.0` fica parada no commit `B` para sempre, enquanto a `main` continua avançando.
+
 ### Quando usar?
 
 - Marcar **lançamentos** (*releases*): `v1.0.0`, `v1.1.0`...
@@ -110,6 +120,45 @@ Agora você está em uma branch normal e pode fazer commits. Depois de corrigir:
 | `git push origin --tags` | Envia todas as tags para o remoto |
 | `git tag -d v1.0.0` | Apaga uma tag local |
 | `git checkout v1.0.0` | Visita o código daquela versão |
+
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No `treino-git`, crie uma tag anotada `v1.0.0` com uma mensagem e veja os detalhes dela.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git tag -a v1.0.0 -m "Primeira versão do treino"
+git show v1.0.0
+```
+
+</details>
+
+**2.** Liste só as tags que começam com `v1`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git tag -l "v1*"
+```
+
+</details>
+
+**3.** Crie uma branch `correcao-v1` a partir da tag `v1.0.0`.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch -c correcao-v1 v1.0.0
+```
+(É o mesmo que `git checkout v1.0.0` seguido de `git switch -c correcao-v1`.)
+
+</details>
 
 ---
 

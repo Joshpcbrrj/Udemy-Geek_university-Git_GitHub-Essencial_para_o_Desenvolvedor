@@ -74,6 +74,40 @@ O **Git History** foca em uma coisa: mostrar o **histórico de commits** de form
 - **GitLens**: informações do Git direto no código (quem alterou cada linha, histórico, comparações).
 - **Git History**: gráfico interativo do histórico de commits.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Publique uma página simples no GitHub Pages.
+
+<details>
+<summary>Ver resposta</summary>
+
+1. Crie um repositório chamado exatamente `SEU-USUARIO.github.io`.
+2. Adicione um `index.html` com, por exemplo, `<h1>Olá, eu sou Fulano!</h1>`.
+3. Faça commit e push.
+4. Depois de alguns minutos, acesse `https://SEU-USUARIO.github.io`.
+
+</details>
+
+**2.** Instale o GitLens e descubra quem alterou por último uma linha de qualquer arquivo do `treino-git`.
+
+<details>
+<summary>Ver resposta</summary>
+
+Com a extensão instalada, clique em uma linha do arquivo: o autor, a data e a mensagem do commit aparecem em cinza no fim da linha (*blame* em linha).
+
+</details>
+
+**3.** Abra o histórico do `treino-git` com a extensão Git History.
+
+<details>
+<summary>Ver resposta</summary>
+
+`Ctrl+Shift+P` (ou `Cmd+Shift+P`) → digite **"Git: View History"** → Enter.
+
+</details>
+
 ---
 
 <div align="center">

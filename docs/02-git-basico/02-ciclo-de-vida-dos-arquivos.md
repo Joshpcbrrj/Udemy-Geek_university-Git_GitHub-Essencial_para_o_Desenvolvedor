@@ -111,6 +111,42 @@ git push origin nome_da_branch
 | `git commit` | Staged → **Unmodified** (salvo no histórico) |
 | `git push` | Envia os commits locais para o remoto |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Na pasta `treino-git`, crie um arquivo `ola.txt` com qualquer texto e rode `git status`. Em qual status ele está?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Untracked** (não rastreado). O `git status` mostra o arquivo em vermelho na seção *Untracked files*.
+
+</details>
+
+**2.** Leve o `ola.txt` até um commit e depois edite o arquivo de novo. Qual é o status depois de cada comando?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git add ola.txt                  # → staged
+git commit -m "Adiciona ola.txt" # → unmodified ("nothing to commit")
+# edite o arquivo e salve         → modified
+git status
+```
+
+</details>
+
+**3.** Qual é a diferença entre `git add ola.txt` e `git add .`?
+
+<details>
+<summary>Ver resposta</summary>
+
+`git add ola.txt` prepara **só aquele arquivo**. `git add .` prepara **todas** as alterações da pasta atual e das subpastas (arquivos novos, modificados e removidos).
+
+</details>
+
 ---
 
 <div align="center">

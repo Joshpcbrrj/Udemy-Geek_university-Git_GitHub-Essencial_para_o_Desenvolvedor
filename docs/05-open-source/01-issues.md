@@ -73,6 +73,42 @@ git push origin main
 - Uma boa issue explica o problema e como reproduzi-lo.
 - `Closes #N`, `Fixes #N` ou `Resolves #N` no commit fecham a issue automaticamente.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Abra uma issue no seu repositório `treino-git` com um título claro e uma descrição com "o que era esperado" e "o que aconteceu".
+
+<details>
+<summary>Ver resposta</summary>
+
+Aba **Issues → New issue** → preencha título e descrição → **Submit new issue**. Repare no número que ela recebeu (ex.: `#1`).
+
+</details>
+
+**2.** Feche essa issue automaticamente com um commit.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+echo "correção" >> README.md
+git commit -am "Corrige texto do README. Closes #1"
+git push
+```
+Como o commit foi para a `main` (branch padrão), a issue é fechada automaticamente.
+
+</details>
+
+**3.** Como mencionar a issue `#2` em um commit **sem** fechá-la?
+
+<details>
+<summary>Ver resposta</summary>
+
+Escreva só o número, sem palavra-chave: `git commit -m "Adiciona rascunho da solução (ref #2)"`.
+
+</details>
+
 ---
 
 <div align="center">

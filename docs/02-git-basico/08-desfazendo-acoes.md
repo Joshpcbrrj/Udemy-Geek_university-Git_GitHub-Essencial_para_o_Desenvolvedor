@@ -138,6 +138,56 @@ Ainda funciona e você vai ver isso em muitos tutoriais antigos. Mas como o `che
 - **Commits já compartilhados:** `git revert`.
 - `--amend`, `reset` e `rebase -i` reescrevem o histórico: use só no que ainda não foi enviado.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Edite o `saudacao.txt` e depois descarte a alteração, voltando ao último commit.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git restore saudacao.txt
+```
+
+</details>
+
+**2.** Você deu `git add .` e incluiu um arquivo por engano. Como tirá-lo do staging sem perder a alteração?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git restore --staged nome-do-arquivo
+```
+
+</details>
+
+**3.** Você fez um commit e percebeu que esqueceu de incluir o arquivo `extra.txt`. Como colocá-lo **no mesmo commit**?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git add extra.txt
+git commit --amend --no-edit
+```
+(Só faça isso se o commit ainda **não** foi enviado ao GitHub.)
+
+</details>
+
+**4.** Desfaça o último commit, mas mantenha as alterações prontas para commitar de novo.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git reset --soft HEAD~1
+```
+
+</details>
+
 ---
 
 <div align="center">

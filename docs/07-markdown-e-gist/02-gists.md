@@ -57,10 +57,44 @@ Pronto! Você recebe um **link exclusivo** para compartilhar.
 - Pode ser **público** ou **secreto** (secreto ≠ privado!).
 - Tem histórico, comentários e pode ter vários arquivos, incluindo um `README.md`.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Crie um Gist **secreto** chamado `comandos-git.md` com seus 5 comandos Git favoritos.
+
+<details>
+<summary>Ver resposta</summary>
+
+Acesse [gist.github.com](https://gist.github.com), preencha a descrição, o nome do arquivo `comandos-git.md` e o conteúdo, e clique em **Create secret gist**.
+
+</details>
+
+**2.** Um Gist secreto é privado?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** Ele não aparece em buscas nem no seu perfil, mas **qualquer pessoa com o link** consegue ver. Nunca coloque senhas ou dados pessoais em um Gist.
+
+</details>
+
+**3.** Clone o Gist que você criou para o seu computador.
+
+<details>
+<summary>Ver resposta</summary>
+
+Na página do Gist, copie a URL do botão **Embed/Clone** (opção *Clone via HTTPS*) e rode:
+```bash
+git clone https://gist.github.com/<id-do-gist>.git
+```
+
+</details>
+
 ---
 
 <div align="center">
 
-[⬅️ 7.1 Markdown](./01-markdown.md) &nbsp;|&nbsp; [🏠 Índice](../../README.md)
+[⬅️ 7.1 Markdown](./01-markdown.md) &nbsp;|&nbsp; [🏠 Índice](../../README.md) &nbsp;|&nbsp; [8.1 git stash ➡️](../08-extras/01-git-stash.md)
 
 </div>

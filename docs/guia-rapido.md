@@ -14,6 +14,8 @@
 - [Repositório remoto](#repositório-remoto)
 - [Desfazendo coisas](#desfazendo-coisas)
 - [Tags](#tags)
+- [Guardando alterações (stash)](#guardando-alterações-stash)
+- [Erros comuns](./08-extras/05-erros-comuns.md)
 - [Glossário](#glossário)
 
 ## Configuração
@@ -81,6 +83,8 @@
 | `git fetch` | Baixa as novidades sem alterar seu trabalho | [3.5](./03-git-intermediario/05-fetch-e-pull.md) |
 | `git pull` | Baixa e junta as novidades na branch atual | [3.5](./03-git-intermediario/05-fetch-e-pull.md) |
 | `git remote add upstream <url>` | Conecta o repositório original de um fork | [5.2](./05-open-source/02-fork.md) |
+| `ssh-keygen -t ed25519 -C "email"` | Gera uma chave SSH | [8.2](./08-extras/02-chave-ssh.md) |
+| `ssh -T git@github.com` | Testa a conexão SSH com o GitHub | [8.2](./08-extras/02-chave-ssh.md) |
 
 ## Desfazendo coisas
 
@@ -102,6 +106,15 @@
 | `git tag -a v1.0.0 -m "msg"` | Cria uma tag anotada | [3.7](./03-git-intermediario/07-tags.md) |
 | `git tag` | Lista as tags | [3.7](./03-git-intermediario/07-tags.md) |
 | `git push origin --tags` | Envia as tags para o remoto | [3.7](./03-git-intermediario/07-tags.md) |
+
+## Guardando alterações (stash)
+
+| Comando | O que faz | Aula |
+| --- | --- | --- |
+| `git stash push -m "msg"` | Guarda as alterações temporariamente | [8.1](./08-extras/01-git-stash.md) |
+| `git stash -u` | Guarda incluindo arquivos novos | [8.1](./08-extras/01-git-stash.md) |
+| `git stash list` | Lista o que está guardado | [8.1](./08-extras/01-git-stash.md) |
+| `git stash pop` | Recupera o último stash e o remove da lista | [8.1](./08-extras/01-git-stash.md) |
 
 ## Glossário
 
@@ -133,6 +146,12 @@
 | **Tag** | Etiqueta fixa em um commit, usada para marcar versões (ex.: `v1.0.0`). |
 | **Bare repository** | Repositório só com o histórico, sem arquivos de trabalho; usado como servidor central. |
 | **`.gitignore`** | Arquivo que lista o que o Git deve ignorar. |
+| **Stash** | "Gaveta" onde o Git guarda alterações temporariamente, sem commit. |
+| **SSH** | Forma de autenticação com um par de chaves (pública e privada), sem senha. |
+| **GitHub Flow** | Fluxo de trabalho em que toda mudança nasce em uma branch e entra na `main` por pull request. |
+| **CI/CD** | Integração e entrega contínuas: testar e publicar o projeto automaticamente. |
+| **GitHub Actions** | Ferramenta do GitHub que executa workflows automáticos (CI/CD). |
+| **Workflow** | Arquivo `.yml` em `.github/workflows/` que descreve uma automação do GitHub Actions. |
 | **Gist** | Pequeno repositório do GitHub para compartilhar trechos de código. |
 
 ---

@@ -79,6 +79,44 @@ git remote rm origin
 | `git remote remove origin` | Remove a conexão com o remoto |
 | `git push -u origin main` | Primeiro envio da branch `main` |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Crie um repositório **vazio** no GitHub chamado `treino-git` e envie para ele o seu repositório local de treino.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git remote add origin https://github.com/SEU-USUARIO/treino-git.git
+git push -u origin main
+```
+Atualize a página do repositório no GitHub para ver seus arquivos.
+
+</details>
+
+**2.** Você renomeou o repositório no GitHub para `meu-treino`. Como atualizar o endereço no seu computador?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git remote set-url origin https://github.com/SEU-USUARIO/meu-treino.git
+git remote -v
+```
+
+</details>
+
+**3.** Rodar `git remote remove origin` apaga o repositório no GitHub?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** Ele só remove a "ligação" no seu computador. O repositório no GitHub continua intacto.
+
+</details>
+
 ---
 
 <div align="center">

@@ -109,6 +109,43 @@ git help log
 - Dá para filtrar por quantidade (`-N`), autor, data, mensagem e muito mais.
 - `git log --graph --oneline --all` mostra o "mapa" das branches.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Mostre os 3 últimos commits do `treino-git`, um por linha.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log --oneline -3
+```
+
+</details>
+
+**2.** Encontre todos os commits que têm a palavra "README" na mensagem.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log --grep="README"
+```
+
+</details>
+
+**3.** Mostre quais arquivos cada commit alterou e quantas linhas mudaram.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log --stat
+```
+
+</details>
+
 ---
 
 <div align="center">

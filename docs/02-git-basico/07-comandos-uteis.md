@@ -102,6 +102,46 @@ git diff --stat
 | `git diff` | Ver alterações ainda não preparadas |
 | `git diff --staged` | Ver o que vai entrar no próximo commit |
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Renomeie `ola.txt` para `saudacao.txt` usando o Git e registre a mudança.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git mv ola.txt saudacao.txt
+git commit -m "Renomeia ola.txt para saudacao.txt"
+```
+
+</details>
+
+**2.** Edite o `saudacao.txt` e rode, nesta ordem: `git diff`, `git add saudacao.txt`, `git diff` e `git diff --staged`. Explique o resultado de cada um.
+
+<details>
+<summary>Ver resposta</summary>
+
+- 1º `git diff`: mostra a alteração (ela ainda não está no staging).
+- Depois do `git add`, o 2º `git diff` fica **vazio**: não há mais nada fora do staging.
+- `git diff --staged` mostra a alteração de novo, porque agora ela está no staging, pronta para o commit.
+
+</details>
+
+**3.** Como parar de rastrear o arquivo `config.local` **sem** apagá-lo do computador?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git rm --cached config.local
+git commit -m "Para de rastrear config.local"
+```
+E adicione `config.local` ao `.gitignore`.
+
+</details>
+
 ---
 
 <div align="center">

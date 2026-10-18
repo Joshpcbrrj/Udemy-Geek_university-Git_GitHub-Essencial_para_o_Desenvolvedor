@@ -49,6 +49,37 @@ Papéis em organizações, do menor para o maior acesso:
 - Em repositórios pessoais, colaboradores têm acesso de escrita; em organizações, você escolhe o papel.
 - Convide apenas pessoas de confiança.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Convide uma pessoa (ou uma segunda conta sua) como colaboradora do repositório `treino-git` e veja o convite pendente.
+
+<details>
+<summary>Ver resposta</summary>
+
+**Settings → Collaborators → Add people** → digite o usuário → confirme. O convite aparece como *pending* até a pessoa aceitar.
+
+</details>
+
+**2.** Em um repositório da sua **conta pessoal**, dá para convidar alguém só com permissão de leitura?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** Em repositórios pessoais todo colaborador recebe acesso de escrita. Se o repositório for público, qualquer pessoa já consegue ler sem convite. Para escolher papéis (Read, Triage, Write…), o repositório precisa estar em uma **organização**.
+
+</details>
+
+**3.** Você mantém um projeto open source e uma pessoa desconhecida quer contribuir. É melhor adicioná-la como colaboradora ou pedir um fork + pull request?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Fork + pull request.** Assim você revisa cada alteração antes de ela entrar no projeto, sem dar acesso de escrita a ninguém.
+
+</details>
+
 ---
 
 <div align="center">

@@ -68,6 +68,40 @@ git push                     # 5. Envia
 - `git pull`: traz as novidades do remoto para a branch atual (= `fetch` + `merge`).
 - Sempre confira a branch atual antes do `pull` e faça `pull` antes do `push`.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Edite o `README.md` do seu `treino-git` **pelo site do GitHub** (ícone de lápis) e depois traga essa alteração para o seu computador.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch main
+git pull
+```
+
+</details>
+
+**2.** Você rodou `git pull` e apareceu `Already up to date.` O que isso significa?
+
+<details>
+<summary>Ver resposta</summary>
+
+Que não há nada novo no remoto: sua branch local já tem todos os commits da branch remota.
+
+</details>
+
+**3.** Coloque a rotina na ordem certa: `git push`, `git commit`, `git pull` (antes de começar), `git add`, `git pull` (antes de enviar).
+
+<details>
+<summary>Ver resposta</summary>
+
+`git pull` → (trabalhar) → `git add` → `git commit` → `git pull` → `git push`.
+
+</details>
+
 ---
 
 <div align="center">

@@ -10,11 +10,18 @@ Imagine que seu projeto é um livro. A branch `main` é a versão oficial. Você
 
 Uma branch é esse rascunho, com uma grande vantagem: ela é **leve e instantânea**. Por baixo dos panos, uma branch é só um **ponteiro** (uma etiqueta) que aponta para um commit. Quando você faz um novo commit na branch, a etiqueta avança junto.
 
-```text
-main:     A ── B ── C
-                     \
-feature:              D ── E   ← você está trabalhando aqui
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    branch feature
+    checkout feature
+    commit id: "D"
+    commit id: "E"
 ```
+
+> Nos diagramas, cada bolinha é um commit e cada cor é uma branch. Aqui, a branch `feature` nasceu do commit `C` e recebeu os commits `D` e `E`, enquanto a `main` continua parada em `C`.
 
 ### Quando usar branches?
 
@@ -125,6 +132,44 @@ Isso é o **merge**, assunto da [próxima aula](./02-merge.md).
 | `git branch -m novo-nome` | Renomeia a branch atual |
 | `git branch -d nome` | Exclui uma branch já mesclada |
 | `git merge nome` | Junta a branch `nome` na branch atual |
+
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No `treino-git`, crie a branch `feature-saudacao`, troque para ela e confirme em qual branch você está.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git switch -c feature-saudacao
+git branch --show-current     # feature-saudacao
+```
+
+</details>
+
+**2.** Crie um arquivo `novo.txt`, faça commit **nessa branch** e volte para a `main`. O arquivo `novo.txt` continua na pasta? Por quê?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Não.** O commit existe só na branch `feature-saudacao`. Ao trocar para a `main`, o Git deixa a pasta como a `main` está, e lá o arquivo ainda não existe. Volte para a `feature-saudacao` e ele reaparece.
+
+</details>
+
+**3.** Renomeie a branch para `feature-boas-vindas` e depois tente excluí-la estando na `main`. O que acontece?
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git branch -m feature-saudacao feature-boas-vindas
+git branch -d feature-boas-vindas
+```
+O Git **recusa** a exclusão (*"not fully merged"*), porque a branch tem commits que ainda não estão na `main`. Para forçar, seria `-D`. (Não exclua agora: vamos usar essa branch na próxima aula.)
+
+</details>
 
 ---
 

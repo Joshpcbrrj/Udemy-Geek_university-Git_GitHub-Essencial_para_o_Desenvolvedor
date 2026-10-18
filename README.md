@@ -23,7 +23,7 @@
 
 Este repositório reúne as minhas anotações do curso **Git e GitHub Essencial para o Desenvolvedor**, da **Geek University**. A ideia é que ele sirva como um **material de estudo e consulta** para qualquer pessoa que esteja aprendendo Git e GitHub.
 
-As explicações foram escritas em **linguagem simples**, com analogias, exemplos práticos e alertas sobre os erros mais comuns. Além do Git, o curso cobre **colaboração em projetos open source**, criação de um **currículo online** com GitHub Pages e **Markdown**.
+As explicações foram escritas em **linguagem simples**, com analogias, diagramas, exemplos práticos, **exercícios com respostas** e alertas sobre os erros mais comuns. Além do Git, o curso cobre **colaboração em projetos open source**, criação de um **currículo online** com GitHub Pages e **Markdown**. No fim, um módulo extra traz assuntos que vão além do curso, como `git stash`, chave SSH, GitHub Flow, GitHub Actions e um guia de erros comuns.
 
 ## 🧭 Como usar este material
 
@@ -40,6 +40,7 @@ Todas as aulas seguem o mesmo formato:
 | **Na prática** | Os comandos, com comentários explicando cada um |
 | **Alertas** | 💡 Dicas, ⚠️ cuidados e ❗ pontos importantes |
 | **Resumindo** | Uma revisão rápida (geralmente uma tabela de comandos) |
+| **🏋️ Mão na massa** | Exercícios para praticar, com a resposta escondida (clique para ver) |
 
 ## ⚡ O fluxo do Git em 30 segundos
 
@@ -128,6 +129,16 @@ git push -u origin main           # 5. Envia para o GitHub
 | 7.2 | [Entendendo Gists](./docs/07-markdown-e-gist/02-gists.md) | Compartilhar trechos de código rapidamente |
 | 📄 | [Modelo de README](./docs/07-markdown-e-gist/modelo-readme/modelo-de-readme.md) | Um template para usar nos seus projetos |
 
+### 8️⃣ Extras (além do curso)
+
+| Aula | Assunto | O que você vai aprender |
+| --- | --- | --- |
+| 8.1 | [git stash](./docs/08-extras/01-git-stash.md) | Guardar alterações temporariamente |
+| 8.2 | [Chave SSH](./docs/08-extras/02-chave-ssh.md) | Conectar ao GitHub sem senha nem token |
+| 8.3 | [GitHub Flow](./docs/08-extras/03-github-flow.md) | O fluxo de trabalho em equipe mais usado no GitHub |
+| 8.4 | [GitHub Actions](./docs/08-extras/04-github-actions.md) | Automatizar testes e publicações (CI/CD) |
+| 8.5 | [Erros comuns e como resolver](./docs/08-extras/05-erros-comuns.md) | Primeiros socorros para as mensagens de erro mais frequentes |
+
 ---
 
 ## 🤝 Encontrou um erro ou quer sugerir uma melhoria?
@@ -141,6 +152,13 @@ Fique à vontade para contribuir! É uma ótima forma de praticar o que está no
 
 - Curso: **Git e GitHub Essencial para o Desenvolvedor**, da **Geek University**, na Udemy.
 - Anotações e resumo: **[Josué B. Almeida](https://github.com/Joshpcbrrj)**.
+
+## 📄 Licença
+
+Os textos, exercícios e diagramas escritos neste repositório estão sob a licença **[Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](./LICENSE)**: você pode copiar, adaptar e compartilhar, inclusive para fins comerciais, desde que dê o crédito ao autor.
+
+> [!NOTE]
+> Os **PDFs de material de apoio**, o **banner** e outras imagens que vêm do curso pertencem à **Geek University** e **não** estão cobertos por esta licença. Os logos e as capturas de tela de produtos (Git, GitHub, VS Code) pertencem aos seus respectivos donos.
 
 <div align="center">
 

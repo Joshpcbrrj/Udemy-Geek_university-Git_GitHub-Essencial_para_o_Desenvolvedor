@@ -60,9 +60,12 @@ git revert a1b2c3d
 
 Em vez de apagar o commit, o Git cria um **novo commit que faz o contrário** daquele. Se o commit original adicionou uma linha, o revert remove essa linha.
 
-```text
-Antes:  A ── B ── C
-Depois: A ── B ── C ── C'   (C' desfaz o que C fez)
+```mermaid
+gitGraph
+    commit id: "A"
+    commit id: "B"
+    commit id: "C"
+    commit id: "C' (revert de C)" type: REVERSE
 ```
 
 O histórico fica intacto e todo mundo consegue ver o que foi desfeito. Por isso, o `revert` é a forma **mais segura** de desfazer algo que **já foi enviado** para o GitHub.
@@ -84,6 +87,41 @@ O histórico fica intacto e todo mundo consegue ver o que foi desfeito. Por isso
 - `reset`: volta a branch e remove commits; `--soft` e `--mixed` mantêm as alterações, `--hard` apaga.
 - `revert`: cria um commit que desfaz outro, preservando o histórico (ideal para o que já foi compartilhado).
 - Os detalhes de cada comando são aprofundados nas aulas [2.8](./08-desfazendo-acoes.md), [4.5](../04-git-avancado/05-desfazendo-com-checkout.md) e [4.6](../04-git-avancado/06-revert-e-reset.md).
+
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** No `treino-git`, visite o **primeiro** commit, veja como os arquivos estavam e volte para o presente.
+
+<details>
+<summary>Ver resposta</summary>
+
+```bash
+git log --oneline        # copie o hash do primeiro commit (o último da lista)
+git checkout <hash>      # os arquivos voltam no tempo (detached HEAD)
+git switch main          # volta ao presente
+```
+
+</details>
+
+**2.** Você descobriu um erro em um commit que **já está no GitHub**. Qual comando é o mais seguro para desfazê-lo?
+
+<details>
+<summary>Ver resposta</summary>
+
+`git revert <hash>`. Ele cria um novo commit que desfaz o anterior, sem reescrever o histórico que outras pessoas já baixaram.
+
+</details>
+
+**3.** Qual é a diferença entre `git reset --soft HEAD~1` e `git reset --hard HEAD~1`?
+
+<details>
+<summary>Ver resposta</summary>
+
+Os dois desfazem o último commit. O `--soft` **mantém** as alterações na staging area, prontas para um novo commit. O `--hard` **apaga** as alterações.
+
+</details>
 
 ---
 

@@ -53,6 +53,37 @@ Você tira e organiza fotos no seu celular sem precisar do Instagram. O Instagra
 - **GitHub** = serviço online que hospeda repositórios Git e facilita a colaboração.
 - Você pode usar Git sem GitHub, mas não faz sentido usar GitHub sem Git.
 
+## 🏋️ Mão na massa
+
+> Tente resolver antes de abrir a resposta. Os exercícios práticos usam a pasta `treino-git`, criada na aula 1.5.
+
+**1.** Verdadeiro ou falso: "Preciso ter uma conta no GitHub para usar o Git."
+
+<details>
+<summary>Ver resposta</summary>
+
+**Falso.** O Git funciona 100% no seu computador, sem internet e sem conta em lugar nenhum. O GitHub só é necessário para hospedar o repositório na nuvem.
+
+</details>
+
+**2.** Cite duas alternativas ao GitHub.
+
+<details>
+<summary>Ver resposta</summary>
+
+**GitLab** e **Bitbucket** (há outras, como Gitea e Azure DevOps). Todas usam o mesmo Git por baixo.
+
+</details>
+
+**3.** Qual destes recursos pertence ao **GitHub** e não ao Git: commit, branch, merge ou pull request?
+
+<details>
+<summary>Ver resposta</summary>
+
+**Pull request.** Commit, branch e merge são recursos do Git; o pull request é uma funcionalidade da plataforma (o GitLab chama de *merge request*).
+
+</details>
+
 ---
 
 <div align="center">
